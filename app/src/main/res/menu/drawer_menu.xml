@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_inicio"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/inicio"/>
+
+        <item
+            android:id="@+id/menu_productos"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/productos"/>
+
+        <item
+            android:id="@+id/menu_categorias"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/categorias"/>
+
+        <item
+            android:id="@+id/menu_perfil"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/perfil"/>
+
+        <item
+            android:id="@+id/menu_carrito"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/carrito"/>
+    </group>
+
+    <item android:title="@string/opciones">
+        <menu>
+            <item
+                android:id="@+id/menu_logout"
+                android:icon="@drawable/ic_launcher_foreground"
+                android:title="@string/cerrar_sesi_n"/>
+        </menu>
+    </item>
+</menu>
