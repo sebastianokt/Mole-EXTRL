@@ -1,4 +1,4 @@
-package fragments
+package com.example.trabajo12.fragments
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -12,11 +12,11 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import adapters.ProductosAdapter
+import com.example.trabajo12.adapters.ProductosAdapter
 import com.example.trabajo12.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import models.Carrito
-import models.Producto
+import com.example.trabajo12.models.Carrito
+import com.example.trabajo12.models.Producto
 
 class ProductosFragment : Fragment() {
 

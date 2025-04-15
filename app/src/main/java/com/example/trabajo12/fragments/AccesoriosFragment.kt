@@ -1,4 +1,4 @@
-package fragments
+package com.example.trabajo12.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,11 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import adapters.ProductosAdapter
+import com.example.trabajo12.adapters.ProductosAdapter
 import com.example.trabajo12.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import models.Producto
-class DeportesFragment : Fragment() {
+import com.example.trabajo12.models.Producto
+
+class AccesoriosFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,10 +23,10 @@ class DeportesFragment : Fragment() {
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewProductos)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
         val productos = listOf(
-            Producto(16, R.drawable.balon, "Balón de Fútbol ", "Tamaño profesional, cosido a máquina.", 99.999, 15, "Deportes"),
-            Producto(17, R.drawable.bicicleta, "Bicicleta ", "21 velocidades, suspensión delantera.", 899.000, 3, "Deportes")
+            Producto(18, R.drawable.mochila, "Mochila Antirrobo", "Compartimento para laptop, resistente al agua.", 150.000, 10, "Accesorios"),
+            Producto(19, R.drawable.gorra, "Gorra Negra", "Ajustable, con diseño bordado.", 59.999, 25, "Accesorios"),
+            Producto(20, R.drawable.reloj, "Reloj Inteligente", "Monitor de ritmo cardíaco y pasos.", 289.000, 5, "Accesorios")
         )
 
         val adapter = ProductosAdapter(productos)

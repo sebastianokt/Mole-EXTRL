@@ -1,4 +1,4 @@
-package models
+package com.example.trabajo12.models
 
 object Carrito {
     private val productosEnCarrito = mutableListOf<Producto>()

@@ -1,4 +1,4 @@
-package fragments
+package com.example.trabajo12.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,8 +10,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trabajo12.R
-import adapters.CategoriaAdapter
-import models.Categoria
+import com.example.trabajo12.adapters.CategoriaAdapter
+import com.example.trabajo12.models.Categoria
 
 class CategoriasFragment : Fragment() {
 

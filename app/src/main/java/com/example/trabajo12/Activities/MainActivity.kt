@@ -1,4 +1,4 @@
-package com.example.trabajo12
+package com.example.trabajo12.Activities
 
 import android.content.Context
 import android.os.Bundle
@@ -7,11 +7,11 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.trabajo12.R
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {

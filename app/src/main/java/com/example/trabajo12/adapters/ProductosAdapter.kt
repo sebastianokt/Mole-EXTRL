@@ -1,4 +1,4 @@
-package adapters
+package com.example.trabajo12.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -10,8 +10,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trabajo12.R
-import models.Producto
-import models.Carrito
+import com.example.trabajo12.models.Producto
+import com.example.trabajo12.models.Carrito
 
 class ProductosAdapter(
     private val productos: List<Producto>

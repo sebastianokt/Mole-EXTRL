@@ -1,4 +1,4 @@
-package fragments
+package com.example.trabajo12.fragments
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.trabajo12.R

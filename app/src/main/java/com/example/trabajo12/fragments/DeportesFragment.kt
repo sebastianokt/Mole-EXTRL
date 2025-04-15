@@ -1,4 +1,4 @@
-package fragments
+package com.example.trabajo12.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,11 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import adapters.ProductosAdapter
+import com.example.trabajo12.adapters.ProductosAdapter
 import com.example.trabajo12.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import models.Producto
-class HogarFragment : Fragment() {
+import com.example.trabajo12.models.Producto
+class DeportesFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,11 +24,8 @@ class HogarFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         val productos = listOf(
-            Producto(11, R.drawable.lampara, "Lámpara de Mesa LED", "Iluminación suave con puerto USB.", 89.999, 25, "Hogar"),
-            Producto(12, R.drawable.sabanas, "Set de Sábanas Queen", "100% algodón con 4 piezas.", 139.500, 10, "Hogar"),
-            Producto(13, R.drawable.silla, "Silla Ergonómica", "Ideal para home office, con soporte lumbar.", 350.00, 6, "Hogar"),
-            Producto(14, R.drawable.cafetera, "Cafetera", "Para 12 tazas, con apagado automático.", 199.900, 8, "Hogar"),
-            Producto(15, R.drawable.almohada, "Almohada", "Espuma con memoria, ideal para cervicales.", 79.000, 30, "Hogar")
+            Producto(16, R.drawable.balon, "Balón de Fútbol ", "Tamaño profesional, cosido a máquina.", 99.999, 15, "Deportes"),
+            Producto(17, R.drawable.bicicleta, "Bicicleta ", "21 velocidades, suspensión delantera.", 899.000, 3, "Deportes")
         )
 
         val adapter = ProductosAdapter(productos)

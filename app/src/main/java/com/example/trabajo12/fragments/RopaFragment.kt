@@ -1,4 +1,4 @@
-package fragments
+package com.example.trabajo12.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,12 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import adapters.ProductosAdapter
+import com.example.trabajo12.adapters.ProductosAdapter
 import com.example.trabajo12.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import models.Producto
-
-class AccesoriosFragment : Fragment() {
+import com.example.trabajo12.models.Producto
+class RopaFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,10 +22,13 @@ class AccesoriosFragment : Fragment() {
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewProductos)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
         val productos = listOf(
-            Producto(18, R.drawable.mochila, "Mochila Antirrobo", "Compartimento para laptop, resistente al agua.", 150.000, 10, "Accesorios"),
-            Producto(19, R.drawable.gorra, "Gorra Negra", "Ajustable, con diseño bordado.", 59.999, 25, "Accesorios"),
-            Producto(20, R.drawable.reloj, "Reloj Inteligente", "Monitor de ritmo cardíaco y pasos.", 289.000, 5, "Accesorios")
+            Producto(6, R.drawable.chaqueta, "Chaqueta de cuero", "Diseño moderno, ideal para clima frío.", 599.000, 12, "Ropa"),
+            Producto(7, R.drawable.camiseta, "Camiseta Oversize", "Estilo urbano, 100% algodón.", 120.000, 20, "Ropa"),
+            Producto(8, R.drawable.pantalon, "Jeans Skinny Azul", "Corte ajustado, perfecto para el día a día.", 220.000, 18, "Ropa"),
+            Producto(9, R.drawable.sudadera, "Sudadera con Capucha", "Con interior afelpado, ideal para invierno.", 180.500, 14, "Ropa"),
+            Producto(10, R.drawable.zapatos, "Zapatos Deportivos Nike", "Con amortiguación Air para mayor comodidad.", 499.999, 9, "Ropa")
         )
 
         val adapter = ProductosAdapter(productos)

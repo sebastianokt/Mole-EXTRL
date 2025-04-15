@@ -1,4 +1,4 @@
-package models
+package com.example.trabajo12.models
 
 data class Producto(
     val id: Int,

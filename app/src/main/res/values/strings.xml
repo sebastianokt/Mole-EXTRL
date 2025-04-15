@@ -58,4 +58,10 @@
     <string name="registro_de_usuario">Registro de Usuario</string>
     <string name="registrar">Registrar</string>
     <string name="ya_tienes_cuenta_inicia_sesi_n">¿Ya tienes cuenta? Inicia sesión</string>
+    <string name="bienvenido_a_mole_extrl">Bienvenido a Mole Extrl</string>
+    <string name="recupera_tu_contrase_a">Recupera tu contraseña</string>
+    <string name="notienes_cuenta">No tienes Cuenta</string>
+    <string name="ingresa_con_google">ingresa con google</string>
+    <string name="recupera_la_contrase_a">Recupera La Contraseña</string>
+    <string name="enviar_cambio_correo">Enviar</string>
 </resources>

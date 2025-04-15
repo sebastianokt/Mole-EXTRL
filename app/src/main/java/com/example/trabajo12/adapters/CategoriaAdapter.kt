@@ -1,4 +1,4 @@
-package adapters
+package com.example.trabajo12.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trabajo12.R
-import models.Categoria
+import com.example.trabajo12.models.Categoria
 
 class CategoriaAdapter(
     private val categorias: List<Categoria>,

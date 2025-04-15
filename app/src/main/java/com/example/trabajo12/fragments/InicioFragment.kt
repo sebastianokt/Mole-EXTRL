@@ -1,4 +1,4 @@
-package fragments
+package com.example.trabajo12.fragments
 
 import android.annotation.SuppressLint
 import android.content.Context

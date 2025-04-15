@@ -13,6 +13,13 @@
         android:layout_marginBottom="24dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <TextView
+        android:text="@string/bienvenido_a_mole_extrl"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/etCorreo"
@@ -29,19 +36,41 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"/>
 
+    <TextView
+        android:id="@+id/recuperarcontrasena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recupera_tu_contrase_a"
+
+        android:textSize="20sp" />
+
+
+
+
     <Button
         android:id="@+id/btnLogin"
         android:text="@string/iniciar_sesi_n"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/purple"/>
 
     <TextView
         android:id="@+id/tvIrARegistro"
         android:text="@string/no_tienes_cuenta_reg_strate"
-        android:textColor="@color/purple"
+        android:textColor="@color/black"
         android:layout_gravity="center"
         android:layout_marginTop="48dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/bt_inrGoogle"
+        android:layout_width="263dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="128dp"
+        android:backgroundTint="@color/purple"
+        android:text="@string/ingresa_con_google"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 </LinearLayout>
