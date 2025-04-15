@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.trabajo12.R
+import com.example.trabajo12.fragments.InicioFragment
 import com.example.trabajo12.fragments.PerfilFragment
 
 class LoginActivity : AppCompatActivity() {
@@ -27,9 +28,9 @@ class LoginActivity : AppCompatActivity() {
         val buttonGoogle = findViewById<Button>(R.id.bt_inrGoogle)
 
         // Recuperar datos guardados en SharedPreferences
-        val sharedPreferences: SharedPreferences = getSharedPreferences("userData", MODE_PRIVATE)
-        val savedUsername = sharedPreferences.getString("nombres", "") ?: ""
-        val savedPassword = sharedPreferences.getString("password", "") ?: ""
+        val sharedPreferences: SharedPreferences = getSharedPreferences("UsuarioPrefs", MODE_PRIVATE)
+        val savedUsername = sharedPreferences.getString("correo", "") ?: ""
+        val savedPassword = sharedPreferences.getString("contrasena", "") ?: ""
 
         Log.d("LoginActivity", "Datos guardados -> Nombre: $savedUsername, Contraseña: $savedPassword")
 
@@ -42,11 +43,11 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            Log.d("LoginActivity", "Intento de inicio -> Nombre: $username, Contraseña: $password")
+            Log.d("LoginActivity", "Intento de inicio -> correo: $username, Contraseña: $password")
 
             if (username == savedUsername && password == savedPassword) {
                 Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, PerfilFragment::class.java)
+                val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {

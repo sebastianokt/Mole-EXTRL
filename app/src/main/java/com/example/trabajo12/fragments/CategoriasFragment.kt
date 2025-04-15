@@ -23,7 +23,7 @@ class CategoriasFragment : Fragment() {
 
         activity?.title = "Categorías"
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewCategorias)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.categoriasFragment)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         val categorias = listOf(
@@ -36,7 +36,6 @@ class CategoriasFragment : Fragment() {
 
         val adapter = CategoriaAdapter(categorias) { categoria ->
             when (categoria.nombre) {
-                "Electrónica" -> findNavController().navigate(R.id.action_categoriasFragment_to_electronicaFragment)
                 "Ropa" -> findNavController().navigate(R.id.action_categoriasFragment_to_ropaFragment)
                 "Hogar" -> findNavController().navigate(R.id.action_categoriasFragment_to_hogarFragment)
                 "Deportes" -> findNavController().navigate(R.id.action_categoriasFragment_to_deportesFragment)

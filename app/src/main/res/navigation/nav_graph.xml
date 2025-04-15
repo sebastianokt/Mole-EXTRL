@@ -79,7 +79,7 @@
 
     <fragment
         android:id="@+id/hogarFragment"
-        android:name="com.example.trabajo12.Activities.HomeActivity"
+        android:name="com.example.trabajo12.fragments.HomeActivity"
         android:label="Hogar"
         tools:layout="@layout/fragment_hogar">
         <action
@@ -115,11 +115,7 @@
         <action
             android:id="@+id/action_perfilFragment2_to_editarPerfilFragment"
             app:destination="@id/editarPerfilFragment" />
-        <action
-            android:id="@+id/action_perfilFragment2_to_loginFragment"
-            app:destination="@id/loginFragment"
-            app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true" />
+
     </fragment>
 
     <fragment

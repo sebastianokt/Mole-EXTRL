@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.example.trabajo12.R
+import com.example.trabajo12.fragments.HomeActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this, Home_Activity::class.java)
             startActivity(intent)
             finish()
         }, 1500) // Espera 1,5 segundos antes de cambiar de pantalla

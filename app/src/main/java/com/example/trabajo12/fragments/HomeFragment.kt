@@ -1,4 +1,4 @@
-package com.example.trabajo12.Activities
+package com.example.trabajo12.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

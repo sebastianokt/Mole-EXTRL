@@ -27,7 +27,7 @@ class RecuperarContrasena : AppCompatActivity() {
     }
 
     private fun verificarCorreo() {
-        val sharedPreferences: SharedPreferences = getSharedPreferences("userData", MODE_PRIVATE)
+        val sharedPreferences: SharedPreferences = getSharedPreferences("UsuarioPrefs", MODE_PRIVATE)
         val correoRegistrado =
             sharedPreferences.getString("correo", null) // Obtener correo guardado
         val correoIngresado = emailInput.text.toString().trim()

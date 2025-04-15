@@ -64,4 +64,5 @@
     <string name="ingresa_con_google">ingresa con google</string>
     <string name="recupera_la_contrase_a">Recupera La Contraseña</string>
     <string name="enviar_cambio_correo">Enviar</string>
+    <string name="Cuerpo">Bienvenido a nuestra tienda ---</string>
 </resources>
