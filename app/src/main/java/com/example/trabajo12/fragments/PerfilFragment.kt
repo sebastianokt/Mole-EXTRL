@@ -44,7 +44,7 @@ class PerfilFragment : Fragment() {
         ivFotoPerfil.setImageResource(R.drawable.perfil)
 
         btnEditar.setOnClickListener {
-            findNavController().navigate(R.id.action_perfilFragment2_to_editarPerfilFragment)
+            findNavController().navigate(R.id.action_editarperfilde_perfilFragment)
         }
 
         return view

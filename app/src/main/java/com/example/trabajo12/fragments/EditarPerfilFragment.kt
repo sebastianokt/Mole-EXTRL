@@ -53,7 +53,7 @@ class EditarPerfilFragment : Fragment() {
 
             if (nombre.isNotEmpty() && email.isNotEmpty() && telefono.isNotEmpty()) {
                 guardarCambios(nombre, email, telefono)
-                findNavController().navigate(R.id.action_editarPerfilFragment_to_perfilFragment2)
+                findNavController().navigate(R.id.action_editarperfilde_perfilFragment2)
             } else {
                 Toast.makeText(context, "¡Complete todos los campos!", Toast.LENGTH_SHORT).show()
             }

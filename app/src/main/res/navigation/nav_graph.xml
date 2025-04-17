@@ -2,54 +2,29 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/inicioFragment">
-
-
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/InicioFragment">
 
     <fragment
-        android:id="@+id/inicioFragment"
+        android:id="@+id/InicioFragment"
         android:name="com.example.trabajo12.fragments.InicioFragment"
-        android:label="Inicio"
-        tools:layout="@layout/fragment_inicio">
-        <action
-            android:id="@+id/action_inicioFragment_to_categoriasFragment"
-            app:destination="@id/categoriasFragment" />
-        <action
-            android:id="@+id/action_inicioFragment_to_productosFragment"
-            app:destination="@id/productosFragment" />
-        <action
-            android:id="@+id/action_inicioFragment_to_perfilFragment2"
-            app:destination="@id/perfilFragment2" />
-    </fragment>
-
+        app:defaultNavHost="true"
+        android:label="@string/inicio" />
     <fragment
-        android:id="@+id/productosFragment"
+        android:id="@+id/ProductosFragment"
         android:name="com.example.trabajo12.fragments.ProductosFragment"
-        android:label="Productos"
-        tools:layout="@layout/fragment_productos">
-        <action
-            android:id="@+id/action_productosFragment_to_carritoFragment"
-            app:destination="@id/carritoFragment" />
-        <action
-            android:id="@+id/action_productosFragment_to_ropaFragment"
-            app:destination="@id/ropaFragment" />
-        <action
-            android:id="@+id/action_productosFragment_to_hogarFragment"
-            app:destination="@id/hogarFragment" />
-        <action
-            android:id="@+id/action_productosFragment_to_deportesFragment"
-            app:destination="@id/deportesFragment" />
-        <action
-            android:id="@+id/action_productosFragment_to_accesoriosFragment"
-            app:destination="@id/accesoriosFragment" />
-    </fragment>
-
+        app:defaultNavHost="true"
+        android:label="@string/productos" />
+    <fragment
+        android:id="@+id/CarritoFragment"
+        android:name="com.example.trabajo12.fragments.CarritoFragment"
+        app:defaultNavHost="true"
+        android:label="@string/carrito" />
     <fragment
         android:id="@+id/categoriasFragment"
         android:name="com.example.trabajo12.fragments.CategoriasFragment"
         android:label="Categorías"
-        tools:layout="@layout/fragment_categorias">
+        tools:layout="@layout/fragment_categorias" >
 
         <action
             android:id="@+id/action_categoriasFragment_to_ropaFragment"
@@ -65,84 +40,48 @@
             app:destination="@id/accesoriosFragment" />
     </fragment>
 
-
-
     <fragment
         android:id="@+id/ropaFragment"
         android:name="com.example.trabajo12.fragments.RopaFragment"
         android:label="Ropa"
-        tools:layout="@layout/fragment_ropa">
-        <action
-            android:id="@+id/action_ropaFragment_to_productosFragment"
-            app:destination="@id/productosFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_ropa" />
 
     <fragment
         android:id="@+id/hogarFragment"
-        android:name="com.example.trabajo12.fragments.HomeActivity"
+        android:name="com.example.trabajo12.fragments.HogarFragment"
         android:label="Hogar"
-        tools:layout="@layout/fragment_hogar">
-        <action
-            android:id="@+id/action_hogarFragment_to_productosFragment"
-            app:destination="@id/productosFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_hogar" />
 
     <fragment
         android:id="@+id/deportesFragment"
         android:name="com.example.trabajo12.fragments.DeportesFragment"
         android:label="Deportes"
-        tools:layout="@layout/fragment_deportes">
-        <action
-            android:id="@+id/action_deportesFragment_to_productosFragment"
-            app:destination="@id/productosFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_deportes" />
 
     <fragment
         android:id="@+id/accesoriosFragment"
         android:name="com.example.trabajo12.fragments.AccesoriosFragment"
         android:label="Accesorios"
-        tools:layout="@layout/fragment_accesorios">
-        <action
-            android:id="@+id/action_accesoriosFragment_to_productosFragment"
-            app:destination="@id/productosFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_accesorios" />
 
     <fragment
-        android:id="@+id/perfilFragment2"
+        android:id="@+id/PerfilFragment"
         android:name="com.example.trabajo12.fragments.PerfilFragment"
-        android:label="Perfil"
-        tools:layout="@layout/fragment_perfil">
+        app:defaultNavHost="true"
+        android:label="@string/perfil">
         <action
-            android:id="@+id/action_perfilFragment2_to_editarPerfilFragment"
-            app:destination="@id/editarPerfilFragment" />
-
+            android:id="@+id/action_editarperfilde_perfilFragment"
+            app:destination="@id/editarperfilFragment"/>
     </fragment>
 
     <fragment
-        android:id="@+id/carritoFragment"
-        android:name="com.example.trabajo12.fragments.CarritoFragment"
-        android:label="Carrito"
-        tools:layout="@layout/fragment_carrito">
-        <action
-            android:id="@+id/action_carritoFragment_to_productosFragment"
-            app:destination="@id/productosFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/editarPerfilFragment"
+        android:id="@+id/editarperfilFragment"
         android:name="com.example.trabajo12.fragments.EditarPerfilFragment"
-        android:label="Editar Perfil"
-        tools:layout="@layout/fragment_editar_perfil">
+        android:label="Editar Perfil" >
         <action
-            android:id="@+id/action_editarPerfilFragment_to_perfilFragment2"
-            app:destination="@id/perfilFragment2" />
+            android:id="@+id/action_editarperfilde_perfilFragment2"
+            app:destination="@id/PerfilFragment" />
     </fragment>
 
-    <action
-        android:id="@+id/action_global_inicioFragment"
-        app:destination="@id/inicioFragment" />
 
-    <action
-        android:id="@+id/action_global_productosFragment"
-        app:destination="@id/productosFragment" />
 </navigation>

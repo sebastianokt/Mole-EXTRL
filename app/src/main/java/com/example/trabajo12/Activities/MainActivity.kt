@@ -1,16 +1,18 @@
 package com.example.trabajo12.Activities
 
-import androidx.navigation.ui.AppBarConfiguration
 
 import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.app.AppCompatActivity
-
 import androidx.navigation.NavController
+import androidx.navigation.ui.AppBarConfiguration
+
+
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.trabajo12.R
+
+import com.example.trabajo12.R;
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(){
@@ -44,10 +46,11 @@ class MainActivity : AppCompatActivity(){
         drawerToggle.syncState()
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.inicioFragment,
+                R.id.InicioFragment,
                 R.id.categoriasFragment,
-                R.id.productosFragment,
-                R.id.carritoFragment
+                R.id.ProductosFragment,
+                R.id.CarritoFragment,
+                R.id.PerfilFragment
             ),
             drawerLayout
         )
@@ -58,4 +61,3 @@ class MainActivity : AppCompatActivity(){
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }
-

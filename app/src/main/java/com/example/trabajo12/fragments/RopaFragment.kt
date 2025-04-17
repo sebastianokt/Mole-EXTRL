@@ -36,7 +36,7 @@ class RopaFragment : Fragment() {
 
         val btnIrAlCarrito = view.findViewById<FloatingActionButton>(R.id.btnIrCarrito)
         btnIrAlCarrito?.setOnClickListener {
-            findNavController().navigate(R.id.carritoFragment)
+            findNavController().navigate(R.id.CarritoFragment)
         }
 
         return view

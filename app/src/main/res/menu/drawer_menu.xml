@@ -4,27 +4,27 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/menu_inicio"
+            android:id="@+id/InicioFragment"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/inicio"/>
 
         <item
-            android:id="@+id/menu_productos"
+            android:id="@+id/ProductosFragment"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/productos"/>
 
         <item
-            android:id="@+id/menu_categorias"
+            android:id="@+id/categoriasFragment"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/categorias"/>
 
         <item
-            android:id="@+id/menu_perfil"
+            android:id="@+id/PerfilFragment"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/perfil"/>
 
         <item
-            android:id="@+id/menu_carrito"
+            android:id="@+id/CarritoFragment"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/carrito"/>
     </group>
