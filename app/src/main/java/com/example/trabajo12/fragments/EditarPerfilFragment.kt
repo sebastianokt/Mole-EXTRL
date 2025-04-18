@@ -32,12 +32,14 @@ class EditarPerfilFragment : Fragment() {
         val etNombre = view.findViewById<EditText>(R.id.etNombre)
         val etEmail = view.findViewById<EditText>(R.id.etEmail)
         val etTelefono = view.findViewById<EditText>(R.id.etTelefono)
+        val etContrasena = view.findViewById<EditText>(R.id.etContrasena)
         val btnCambiarFoto = view.findViewById<Button>(R.id.btnCambiarFoto)
         val btnGuardar = view.findViewById<Button>(R.id.btnGuardarCambios)
 
         etNombre.setText(sharedPref.getString("nombre", ""))
         etEmail.setText(sharedPref.getString("correo", ""))
         etTelefono.setText(sharedPref.getString("telefono", ""))
+        etContrasena.setText(sharedPref.getString("contrasena", ""))
 
         ivFotoPerfil.setImageResource(R.drawable.perfil)
 
@@ -50,9 +52,10 @@ class EditarPerfilFragment : Fragment() {
             val nombre = etNombre.text.toString()
             val email = etEmail.text.toString()
             val telefono = etTelefono.text.toString()
+            val contrasena = etContrasena.text.toString()
 
-            if (nombre.isNotEmpty() && email.isNotEmpty() && telefono.isNotEmpty()) {
-                guardarCambios(nombre, email, telefono)
+            if (nombre.isNotEmpty() && email.isNotEmpty() && telefono.isNotEmpty() && contrasena.isNotEmpty()) {
+                guardarCambios(nombre, email, telefono, contrasena)
                 findNavController().navigate(R.id.action_editarperfilde_perfilFragment2)
             } else {
                 Toast.makeText(context, "¡Complete todos los campos!", Toast.LENGTH_SHORT).show()
@@ -62,11 +65,12 @@ class EditarPerfilFragment : Fragment() {
         return view
     }
 
-    private fun guardarCambios(nombre: String, email: String, telefono: String) {
+    private fun guardarCambios(nombre: String, email: String, telefono: String, contrasena: String) {
         with(sharedPref.edit()) {
             putString("nombre", nombre)
             putString("correo", email)
             putString("telefono", telefono)
+            putString("contrasena", contrasena)
             apply() // Guardar cambios
         }
         Toast.makeText(context, "Perfil actualizado correctamente", Toast.LENGTH_SHORT).show()

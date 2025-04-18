@@ -16,14 +16,14 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="228dp"
-            android:layout_height="187dp"
+            android:layout_width="285dp"
+            android:layout_height="266dp"
             android:layout_marginTop="68dp"
-            android:src="@drawable/logo"
-            android:contentDescription="Logo" />
+            android:src="@drawable/logo" />
 
         <TextView
             android:id="@+id/textViewnombreapph"
+            android:fontFamily="sans-serif-medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -46,12 +46,13 @@
             android:layout_width="235dp"
             android:layout_height="68dp"
             android:layout_marginTop="48dp"
-            android:backgroundTint="@color/purple"
+            android:backgroundTint="@color/azul"
             android:text="@string/iniciar_sesi_n"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="34sp"
-            app:strokeColor="@color/purple"
-            app:strokeWidth="2dp" />
+            app:cornerRadius="10dp"
+            app:strokeColor="@color/azul"
+            app:strokeWidth="3dp" />
 
         <TextView
             android:id="@+id/registrarHome"

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.trabajo12.R
+import com.example.trabajo12.fragments.HomeActivity
 
 class RegistroActivity : AppCompatActivity() {
 
@@ -14,7 +15,7 @@ class RegistroActivity : AppCompatActivity() {
     private lateinit var etTelefono: EditText
     private lateinit var etContrasena: EditText
     private lateinit var btnRegistrar: Button
-    private lateinit var tvIrLogin: TextView
+    private lateinit var tvnCancelar: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +26,7 @@ class RegistroActivity : AppCompatActivity() {
         etTelefono = findViewById(R.id.etTelefono)
         etContrasena = findViewById(R.id.etContrasena)
         btnRegistrar = findViewById(R.id.btnRegistrar)
-        tvIrLogin = findViewById(R.id.tvIrLogin)
+        tvnCancelar = findViewById(R.id.cancelar)
 
         val sharedPref = getSharedPreferences("UsuarioPrefs", Context.MODE_PRIVATE)
 
@@ -51,10 +52,9 @@ class RegistroActivity : AppCompatActivity() {
                 Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
             }
         }
-
-        tvIrLogin.setOnClickListener {
-            startActivity(Intent(this, LoginActivity::class.java))
+        tvnCancelar.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
             finish()
         }
+        }
     }
-}

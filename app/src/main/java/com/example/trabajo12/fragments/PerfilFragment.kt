@@ -31,15 +31,18 @@ class PerfilFragment : Fragment() {
         val tvNombre = view.findViewById<TextView>(R.id.tvNombre)
         val tvEmail = view.findViewById<TextView>(R.id.tvEmail)
         val tvTelefono = view.findViewById<TextView>(R.id.tvTelefono)
+        val tvContrasena = view.findViewById<TextView>(R.id.tvContrasena)
         val btnEditar = view.findViewById<Button>(R.id.btnEditarPerfil)
 
         val nombre = sharedPref.getString("nombre", "Usuario no registrado")
         val correo = sharedPref.getString("correo", "Correo no registrado")
         val telefono = sharedPref.getString("telefono", "Teléfono no registrado")
+        val contrasena = sharedPref.getString("contrasena", "Contraseña no registrada")
 
         tvNombre.text = nombre
         tvEmail.text = correo
         tvTelefono.text = telefono
+        tvContrasena.text = contrasena
 
         ivFotoPerfil.setImageResource(R.drawable.perfil)
 

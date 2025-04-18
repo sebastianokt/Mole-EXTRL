@@ -17,14 +17,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/purple"
+            android:background="@color/azul"
             android:gravity="center"
             android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/logo"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -44,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:defaultNavHost="true"
+            app:itemTextColor="@color/white"
             app:navGraph="@navigation/nav_graph" />
     </LinearLayout>
 
@@ -55,5 +51,6 @@
         android:layout_gravity="start"
         android:background="@color/white"
         app:menu="@menu/drawer_menu"
-        app:headerLayout="@layout/draw_header"/>
+        app:headerLayout="@layout/draw_header"
+        app:itemTextColor="@color/black"/>
 </androidx.drawerlayout.widget.DrawerLayout>

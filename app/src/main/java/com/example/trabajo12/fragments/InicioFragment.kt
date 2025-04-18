@@ -23,7 +23,7 @@ class InicioFragment : Fragment() {
 
         val sharedPref = requireActivity().getSharedPreferences("UsuarioPrefs", Context.MODE_PRIVATE)
         val nombreUsuario = sharedPref.getString("nombre", "Cliente")
-        view.findViewById<TextView>(R.id.tvBienvenida).text = "¡Bienvenido a OktShop, $nombreUsuario!"
+        view.findViewById<TextView>(R.id.tvBienvenida).text = "¡Bienvenido a Mole XTRL, $nombreUsuario!"
 
 
         return view

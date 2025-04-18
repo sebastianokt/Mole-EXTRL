@@ -5,27 +5,22 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/InicioFragment"
-            android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/inicio"/>
 
         <item
             android:id="@+id/ProductosFragment"
-            android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/productos"/>
 
         <item
             android:id="@+id/categoriasFragment"
-            android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/categorias"/>
 
         <item
             android:id="@+id/PerfilFragment"
-            android:icon="@drawable/ic_launcher_foreground"
-            android:title="@string/perfil"/>
+            android:title="@string/perfil" />
 
         <item
             android:id="@+id/CarritoFragment"
-            android:icon="@drawable/ic_launcher_foreground"
             android:title="@string/carrito"/>
     </group>
 
