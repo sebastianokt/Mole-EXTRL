@@ -68,4 +68,7 @@
     <string name="cancelar">Cancelar</string>
     <string name="que_bueno_verte_de_nuevo">QUE BUENO VERTE DE NUEVO</string>
     <string name="google">Google</string>
+    <string name="tiendas_cercanas">Tiendas cercanas</string>
+    <string name="tienda_en_chapinero">Tienda en Chapinero Carrera 13 No. 54 - 74</string>
+    <string name="ubicate_en_el_mapa">Ubicate en el mapa</string>
 </resources>

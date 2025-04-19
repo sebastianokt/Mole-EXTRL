@@ -22,12 +22,16 @@
         <item
             android:id="@+id/CarritoFragment"
             android:title="@string/carrito"/>
+
+        <item
+            android:id="@+id/TiendasCercanasFragment"
+            android:title="@string/tiendas_cercanas"/>
     </group>
 
     <item android:title="@string/opciones">
         <menu>
             <item
-                android:id="@+id/menu_logout"
+                android:id="@+id/cerrar_sesion"
                 android:icon="@drawable/ic_launcher_foreground"
                 android:title="@string/cerrar_sesi_n"/>
         </menu>
