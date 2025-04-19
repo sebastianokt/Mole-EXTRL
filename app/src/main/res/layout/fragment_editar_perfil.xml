@@ -53,7 +53,7 @@
                 android:paddingStart="16dp"
                 android:hint="@string/ingrese_su_nombre_completo"
                 android:inputType="textPersonName"
-                android:textColor="@android:color/black"/>
+                android:textColor="@color/black"/>
         </LinearLayout>
 
         <!-- Correo -->
@@ -73,7 +73,7 @@
                 android:paddingStart="16dp"
                 android:hint="@string/ingrese_su_correo_electr_nico"
                 android:inputType="textEmailAddress"
-                android:textColor="@android:color/black"/>
+                android:textColor="@color/black"/>
         </LinearLayout>
 
         <!-- Teléfono -->
@@ -93,7 +93,7 @@
                 android:paddingStart="16dp"
                 android:hint="@string/ingrese_su_n_mero_de_tel_fono"
                 android:inputType="phone"
-                android:textColor="@android:color/black"/>
+                android:textColor="@color/black"/>
         </LinearLayout>
 
         <!-- Contraseña -->
@@ -112,7 +112,7 @@
                 android:paddingStart="16dp"
                 android:hint="Ingrese su contraseña"
                 android:inputType="textPassword"
-                android:textColor="@android:color/black"/>
+                android:textColor="@color/black"/>
         </LinearLayout>
 
         <!-- Botón Guardar -->

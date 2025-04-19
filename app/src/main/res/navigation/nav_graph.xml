@@ -11,6 +11,11 @@
         app:defaultNavHost="true"
         android:label="@string/inicio" />
 
+    <fragment
+        android:id="@+id/TiendasCercanasFragment"
+        android:name="com.example.trabajo12.fragments.TiendascercanasFragment"
+        app:defaultNavHost="true"
+        android:label="@string/tiendas_cercanas" />
 
 
     <fragment
