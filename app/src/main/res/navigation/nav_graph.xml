@@ -90,6 +90,14 @@
             android:id="@+id/action_editarperfilde_perfilFragment2"
             app:destination="@id/PerfilFragment" />
     </fragment>
-
+    <fragment
+        android:id="@+id/adminGeneralFragment"
+        android:name="com.example.trabajo12.fragments.AdminGeneralFragment"
+        android:label="Admin General"
+        tools:layout="@layout/fragment_adm_cuenta">
+        <action
+            android:id="@+id/action_adminGeneralFragment_to_adminCuentaFragment"
+            app:destination="@+id/Adm_Cuenta" />
+    </fragment>
 
 </navigation>

@@ -71,4 +71,28 @@
     <string name="tiendas_cercanas">Tiendas cercanas</string>
     <string name="tienda_en_chapinero">Tienda en Chapinero Carrera 13 No. 54 - 74</string>
     <string name="ubicate_en_el_mapa">Ubicate en el mapa</string>
+    <string name="Admin">ADMINISTRADOR</string>"
+    <string name="Eliminarproductos">Eliminar productos</string>
+    <string name="Agregarproductos">Agregar productos</string>
+    <string name="Editarproductos">Editar productos</string>
+    <string name="Cuenta">Administrar Cuenta</string>
+    <string name="Stockentienda">Stock en tienda</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="editar">Editar</string>
+    <string name="correo_correo_com">correo@correo.com</string>
+    <string name="nombre_de_usuario">Nombre de usuario</string>
+    <string name="administrar_cuenta">Administrar Cuenta</string>
+    <string name="agregar_cuenta">Agregar cuenta</string>
+    <string name="nombredelproducto">Nombre del producto</string>
+    <string name="descripci_n">Descripción</string>
+    <string name="precio">Precio</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="agregarproducto">Agregar producto</string>
+    <string name="logode_gregarproducto">Logo de agregar producto</string>
+    <string name="agregarproductos">Agregar Productos</string>
+    <string name="eliminar_productos">Eliminar Productos</string>
+    <string name="editar_producto">Editar Producto</string>
+    <string name="stock_en_tienda">Stock en Tienda</string>
+    <string name="agregar">Agregar</string>
+
 </resources>
