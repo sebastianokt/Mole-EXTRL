@@ -3,8 +3,7 @@
     android:orientation="vertical"
     android:padding="12dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:marginBottom="8dp">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/txtNombreCuenta"
@@ -19,7 +18,7 @@
         android:id="@+id/txtCorreoCuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/correo_correo_com"
+        android:text="@string/correo_electr_nico"
         android:textSize="14sp"
         android:textColor="#555" />
 
@@ -40,7 +39,7 @@
             android:id="@+id/btnEliminarCuenta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/eliminar"
+            android:text="@string/Eliminar"
             android:layout_marginStart="8dp"
             android:textColor="#fff"
             android:backgroundTint="@color/azul" />

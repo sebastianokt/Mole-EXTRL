@@ -16,7 +16,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/logo"
-            android:contentDescription="@string/logode_gregarproducto"
+            android:contentDescription="@string/logo_tienda"
             android:layout_marginBottom="8dp" />
 
 
@@ -24,7 +24,7 @@
             android:id="@+id/tvTituloAgregarProducto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/agregarproductos"
+            android:text="@string/Agregarproductos"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="#000000"
@@ -33,13 +33,13 @@
 
         <EditText
             android:id="@+id/etNombreProducto"
-            android:hint="@string/nombredelproducto"
+            android:hint="@string/nombre_del_producto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/etDescripcion"
-            android:hint="@string/descripci_n"
+            android:hint="@string/product_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
@@ -67,7 +67,7 @@
 
         <Button
             android:id="@+id/btnAgregarProducto"
-            android:text="@string/agregarproducto"
+            android:text="@string/Agregarproducto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
