@@ -52,25 +52,25 @@
         android:id="@+id/ropaFragment"
         android:name="com.example.trabajo12.fragments.RopaFragment"
         android:label="Ropa"
-        tools:layout="@layout/fragment_ropa" />
+        tools:layout="@layout/fragment_productos" />
 
     <fragment
         android:id="@+id/hogarFragment"
-        android:name="com.example.trabajo12.fragments.HogarFragment"
+        android:name="com.example.trabajo12.fragments.HomeActivity"
         android:label="Hogar"
-        tools:layout="@layout/fragment_hogar" />
+        tools:layout="@layout/fragment_productos" />
 
     <fragment
         android:id="@+id/deportesFragment"
         android:name="com.example.trabajo12.fragments.DeportesFragment"
         android:label="Deportes"
-        tools:layout="@layout/fragment_deportes" />
+        tools:layout="@layout/fragment_productos" />
 
     <fragment
         android:id="@+id/accesoriosFragment"
         android:name="com.example.trabajo12.fragments.AccesoriosFragment"
         android:label="Accesorios"
-        tools:layout="@layout/fragment_accesorios" />
+        tools:layout="@layout/fragment_productos" />
 
     <fragment
         android:id="@+id/PerfilFragment"
