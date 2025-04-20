@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@android:color/white"
+    android:background="@drawable/fondoregistro"
     android:padding="24dp">
 
     <LinearLayout
@@ -13,7 +13,7 @@
 
         <!-- Título principal -->
         <TextView
-            android:text="Crear\nCuenta"
+            android:text="@string/crear_cuenta"
             android:textSize="32sp"
             android:textStyle="bold"
             android:textColor="#000000"
