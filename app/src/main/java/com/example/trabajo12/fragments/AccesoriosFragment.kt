@@ -23,7 +23,9 @@ class AccesoriosFragment : Fragment() {
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewProductos)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        val productos = listOf(
+
+
+        val productos: List<Producto> = listOf(
             Producto(18, R.drawable.mochila, "Mochila Antirrobo", "Compartimento para laptop, resistente al agua.", 150.000, 10, "Accesorios"),
             Producto(19, R.drawable.gorra, "Gorra Negra", "Ajustable, con diseño bordado.", 59.999, 25, "Accesorios"),
             Producto(20, R.drawable.reloj, "Reloj Inteligente", "Monitor de ritmo cardíaco y pasos.", 289.000, 5, "Accesorios")

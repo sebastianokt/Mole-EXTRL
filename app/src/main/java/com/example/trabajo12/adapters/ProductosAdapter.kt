@@ -1,6 +1,7 @@
 package com.example.trabajo12.adapters
 
 import android.annotation.SuppressLint
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,9 +14,12 @@ import com.example.trabajo12.R
 import com.example.trabajo12.models.Producto
 import com.example.trabajo12.models.Carrito
 
+
 class ProductosAdapter(
-    private val productos: List<Producto>
+    private val productos: List<Producto> // Cambié de MutableList a List
 ) : RecyclerView.Adapter<ProductosAdapter.ProductoViewHolder>() {
+
+    private val productosSeleccionados = mutableSetOf<Producto>()
 
     inner class ProductoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imgProducto: ImageView = itemView.findViewById(R.id.imgProducto)
@@ -53,8 +57,11 @@ class ProductosAdapter(
                 cantidadSeleccionada++
                 holder.txtCantidadSeleccionada.text = cantidadSeleccionada.toString()
             } else {
-                Toast.makeText(holder.itemView.context,
-                    "No hay suficiente stock", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    holder.itemView.context,
+                    "No hay suficiente stock",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
@@ -77,7 +84,33 @@ class ProductosAdapter(
             cantidadSeleccionada = 1
             holder.txtCantidadSeleccionada.text = "1"
         }
+
+
+        holder.itemView.setBackgroundColor(
+            if (productosSeleccionados.contains(producto)) Color.LTGRAY else Color.TRANSPARENT
+        )
+
+
+        holder.itemView.setOnClickListener {
+            if (productosSeleccionados.contains(producto)) {
+                productosSeleccionados.remove(producto)
+                holder.itemView.setBackgroundColor(Color.TRANSPARENT)
+            } else {
+                productosSeleccionados.add(producto)
+                holder.itemView.setBackgroundColor(Color.LTGRAY)
+            }
+        }
     }
 
     override fun getItemCount(): Int = productos.size
+
+
+    fun obtenerProductosSeleccionados(): List<Producto> = productosSeleccionados.toList()
+
+    fun eliminarProductosSeleccionados() {
+        val mutableProductos = productos.toMutableList() // Convertimos a MutableList solo para eliminar elementos
+        mutableProductos.removeAll(productosSeleccionados)
+        productosSeleccionados.clear()
+        notifyDataSetChanged()
+    }
 }

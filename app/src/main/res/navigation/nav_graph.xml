@@ -91,13 +91,42 @@
             app:destination="@id/PerfilFragment" />
     </fragment>
     <fragment
-        android:id="@+id/adminGeneralFragment"
-        android:name="com.example.trabajo12.fragments.AdminGeneralFragment"
-        android:label="Admin General"
-        tools:layout="@layout/fragment_adm_cuenta">
+        android:id="@+id/administradorFragment"
+        android:name="com.example.trabajo12.fragments.AdministradorFragment"
+        android:label="fragment_administrador"
+        tools:layout="@layout/fragment_administrador">
         <action
-            android:id="@+id/action_adminGeneralFragment_to_adminCuentaFragment"
-            app:destination="@+id/Adm_Cuenta" />
+            android:id="@+id/action_administradorFragment_to_administrarCuentaFragment"
+            app:destination="@id/administrarCuentaFragment" />
+        <action
+            android:id="@+id/action_administradorFragment_to_agregarProductosFragment"
+            app:destination="@id/agregarProductosFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/administrarCuentaFragment"
+        android:name="com.example.trabajo12.fragments.AdministrarCuentaFragment"
+        android:label="fragment_adm_cuenta"
+        tools:layout="@layout/fragment_adm_cuenta" />
+
+    <fragment
+        android:id="@+id/agregarProductosFragment"
+        android:name="com.example.trabajo12.fragments.AgregarProductosFragment"
+        android:label="fragment_adm_agregar_productos"
+        tools:layout="@layout/fragment_adm_agregar_productos" />
+    <fragment
+        android:id="@+id/EliminarProductosFragment"
+        android:name="com.example.trabajo12.fragments.AdministradorFragment"
+        android:label="Administrador" >
+        <action
+            android:id="@+id/action_administradorFragment_to_eliminarProductosFragment"
+            app:destination="@id/eliminarProductosFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/eliminarProductosFragment"
+        android:name="com.example.trabajo12.fragments.EliminarProductosFragment"
+        android:label="Eliminar Productos" />
+
 
 </navigation>
