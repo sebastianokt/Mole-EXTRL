@@ -1,4 +1,6 @@
 package com.example.trabajo12.fragments
+
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,32 +11,40 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.trabajo12.R
 
-class AgregarProductoFragment : Fragment() {
+class AgregarProductosFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_adm_agregar_productos, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val nombre = view.findViewById<EditText>(R.id.etNombreProducto)
-        val descripcion = view.findViewById<EditText>(R.id.etDescripcion)
-        val precio = view.findViewById<EditText>(R.id.etPrecio)
-        val cantidad = view.findViewById<EditText>(R.id.etCantidad)
-        val btnAgregar = view.findViewById<Button>(R.id.btnAgregarProducto)
+        super.onViewCreated(view, savedInstanceState)
 
-        btnAgregar.setOnClickListener {
-            val nombreTexto = nombre.text.toString()
-            val descripcionTexto = descripcion.text.toString()
-            val precioValor = precio.text.toString().toDoubleOrNull()
-            val cantidadValor = cantidad.text.toString().toIntOrNull()
+        val etNombreProducto = view.findViewById<EditText>(R.id.etNombreProducto)
+        val etPrecioProducto = view.findViewById<EditText>(R.id.etPrecioProducto)
+        val btnGuardarProducto = view.findViewById<Button>(R.id.btnGuardarProducto)
 
-            if (nombreTexto.isNotEmpty() && precioValor != null && cantidadValor != null) {
-                Toast.makeText(requireContext(), "Producto agregado", Toast.LENGTH_SHORT).show()
+        btnGuardarProducto.setOnClickListener {
+            val nombre = etNombreProducto.text.toString().trim()
+            val precio = etPrecioProducto.text.toString().trim()
+
+            if (nombre.isNotEmpty() && precio.isNotEmpty()) {
+                val sharedPreferences = requireActivity().getSharedPreferences("ProductosPrefs", Context.MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                editor.putString("nombreProducto", nombre)
+                editor.putString("precioProducto", precio)
+                editor.apply()
+
+                Toast.makeText(requireContext(), "Producto guardado correctamente", Toast.LENGTH_SHORT).show()
+
+                etNombreProducto.text.clear()
+                etPrecioProducto.text.clear()
             } else {
-                Toast.makeText(requireContext(), "Completa todos los campos correctamente", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
             }
         }
     }
