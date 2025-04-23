@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -53,6 +52,19 @@
             app:cornerRadius="10dp"
             app:strokeColor="@color/azul"
             app:strokeWidth="3dp" />
+
+
+        <TextView
+            android:id="@+id/textViewAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/eresadministrador"
+            android:textColor="@color/azul"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:clickable="true"
+            android:focusable="true" />
 
         <TextView
             android:id="@+id/registrarHome"

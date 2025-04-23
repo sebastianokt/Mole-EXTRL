@@ -92,4 +92,5 @@
     <string name="Eliminar">Eliminar</string>
     <string name="CantidadDisponible">Cantidad disponible</string>
     <string name="Refrescar">Refrescar</string>
+    <string name="eresadministrador">¿Eres administrador?</string>
 </resources>

@@ -15,7 +15,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.trabajo12.R;
 import com.google.android.material.navigation.NavigationView
 
-class MainActivity : AppCompatActivity(){
+class   MainActivity : AppCompatActivity(){
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar

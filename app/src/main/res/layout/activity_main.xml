@@ -13,6 +13,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <!-- Barra superior -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -33,17 +34,17 @@
                 android:paddingStart="20dp"/>
         </androidx.appcompat.widget.Toolbar>
 
+        <!-- Contenedor de fragmentos (NavHost) -->
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/nav_host_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:defaultNavHost="true"
-            app:itemTextColor="@color/white"
             app:navGraph="@navigation/nav_graph" />
     </LinearLayout>
 
-    <!-- Menú de navegación lateral -->
+    <!-- Menú lateral -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"

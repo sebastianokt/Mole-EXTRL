@@ -3,37 +3,36 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/layout_admin_cuenta"
+    android:name=".ui.admin.AdminCuentaActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:name=".ui.admin.AdminCuentaActivity">
-
-
+    android:background="@color/white">
 
 
     <LinearLayout
         android:id="@+id/layoutEncabezado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:padding="16dp">
 
         <ImageView
             android:id="@+id/imgLogo"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/logo"
+            android:layout_marginEnd="12dp"
             android:contentDescription="Logo de la app"
-            android:layout_marginEnd="12dp" />
+            android:src="@drawable/logo" />
 
         <TextView
             android:id="@+id/txtTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/administrar_cuenta"
+            android:textColor="#000000"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#000000" />
+            android:textStyle="bold" />
     </LinearLayout>
 
 
