@@ -90,43 +90,68 @@
             android:id="@+id/action_editarperfilde_perfilFragment2"
             app:destination="@id/PerfilFragment" />
     </fragment>
+    <!-- Administrador -->
     <fragment
         android:id="@+id/administradorFragment"
         android:name="com.example.trabajo12.fragments.AdministradorFragment"
-        android:label="fragment_administrador"
+        android:label="Administrador"
         tools:layout="@layout/fragment_administrador">
+
+
         <action
             android:id="@+id/action_administradorFragment_to_administrarCuentaFragment"
             app:destination="@id/administrarCuentaFragment" />
+
+
         <action
             android:id="@+id/action_administradorFragment_to_agregarProductosFragment"
             app:destination="@id/agregarProductosFragment" />
+
+
+        <action
+            android:id="@+id/action_administradorFragment_to_eliminarProductosFragment"
+            app:destination="@id/eliminarProductosFragment" />
+
+
+        <action
+            android:id="@+id/action_administradorFragment_to_editarProductosFragment"
+            app:destination="@id/editarProductosFragment" />
+
+
+        <action
+            android:id="@+id/action_administradorFragment_to_stockFragment"
+            app:destination="@id/stockFragment" />
     </fragment>
+
 
     <fragment
         android:id="@+id/administrarCuentaFragment"
         android:name="com.example.trabajo12.fragments.AdministrarCuentaFragment"
-        android:label="fragment_adm_cuenta"
+        android:label="Administrar Cuenta"
         tools:layout="@layout/fragment_adm_cuenta" />
 
     <fragment
         android:id="@+id/agregarProductosFragment"
         android:name="com.example.trabajo12.fragments.AgregarProductosFragment"
-        android:label="fragment_adm_agregar_productos"
+        android:label="Agregar Productos"
         tools:layout="@layout/fragment_adm_agregar_productos" />
-    <fragment
-        android:id="@+id/EliminarProductosFragment"
-        android:name="com.example.trabajo12.fragments.AdministradorFragment"
-        android:label="Administrador" >
-        <action
-            android:id="@+id/action_administradorFragment_to_eliminarProductosFragment"
-            app:destination="@id/eliminarProductosFragment" />
-    </fragment>
 
     <fragment
         android:id="@+id/eliminarProductosFragment"
         android:name="com.example.trabajo12.fragments.EliminarProductosFragment"
-        android:label="Eliminar Productos" />
+        android:label="Eliminar Productos"
+        tools:layout="@layout/fragment_adm_eliminar_productos" />
 
+    <fragment
+        android:id="@+id/editarProductosFragment"
+        android:name="com.example.trabajo12.fragments.EditarProductosFragment"
+        android:label="Editar Productos"
+        tools:layout="@layout/fragment_adm_editar_productos" />
+
+    <fragment
+        android:id="@+id/stockFragment"
+        android:name="com.example.trabajo12.fragments.StockFragment"
+        android:label="Stock en Tienda"
+        tools:layout="@layout/fragment_adm_stock_tienda" />
 
 </navigation>

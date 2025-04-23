@@ -90,4 +90,6 @@
     <string name="nombre_de_usuario">Nombre de usuario</string>
     <string name="editar">Editar</string>
     <string name="Eliminar">Eliminar</string>
+    <string name="CantidadDisponible">Cantidad disponible</string>
+    <string name="Refrescar">Refrescar</string>
 </resources>

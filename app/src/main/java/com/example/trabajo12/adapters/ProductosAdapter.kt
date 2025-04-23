@@ -108,7 +108,7 @@ class ProductosAdapter(
     fun obtenerProductosSeleccionados(): List<Producto> = productosSeleccionados.toList()
 
     fun eliminarProductosSeleccionados() {
-        val mutableProductos = productos.toMutableList() // Convertimos a MutableList solo para eliminar elementos
+        val mutableProductos = productos.toMutableList()
         mutableProductos.removeAll(productosSeleccionados)
         productosSeleccionados.clear()
         notifyDataSetChanged()

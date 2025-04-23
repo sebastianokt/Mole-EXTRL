@@ -15,31 +15,42 @@ class AdministradorFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflamos el layout para este fragmento
         return inflater.inflate(R.layout.fragment_administrador, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Referenciamos los botones
+
         val btnAdminCuenta = view.findViewById<Button>(R.id.Adm_Cuenta)
         val btnAgregarProductos = view.findViewById<Button>(R.id.Adm_Agregar)
         val btnEliminarProductos = view.findViewById<Button>(R.id.Adm_Eliminar)
+        val btnEditarProductos = view.findViewById<Button>(R.id.Adm_Editar)
+        val btnStock = view.findViewById<Button>(R.id.Adm_Stock)
 
-        // Navegar al fragmento de AdministrarCuentaFragment
+        // Navegar a Administrar Cuenta
         btnAdminCuenta.setOnClickListener {
-            findNavController().navigate(R.id.Adm_Cuenta)
+            findNavController().navigate(R.id.action_administradorFragment_to_administrarCuentaFragment)
         }
 
-        // Navegar al fragmento de AgregarProductosFragment
+        // Navegar a Agregar Productos
         btnAgregarProductos.setOnClickListener {
-            findNavController().navigate(R.id.Adm_Agregar)
+            findNavController().navigate(R.id.action_administradorFragment_to_agregarProductosFragment)
         }
 
-        // Navegar al fragmento de EliminarProductosFragment
+        // Navegar a Eliminar Productos
         btnEliminarProductos.setOnClickListener {
             findNavController().navigate(R.id.action_administradorFragment_to_eliminarProductosFragment)
+        }
+
+        // Navegar a Editar Productos
+        btnEditarProductos.setOnClickListener {
+            findNavController().navigate(R.id.action_administradorFragment_to_editarProductosFragment)
+        }
+
+        // Navegar a Stock en Tienda
+        btnStock.setOnClickListener {
+            findNavController().navigate(R.id.action_administradorFragment_to_stockFragment)
         }
     }
 }
