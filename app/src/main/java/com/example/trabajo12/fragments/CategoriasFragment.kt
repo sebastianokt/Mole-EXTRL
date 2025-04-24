@@ -36,10 +36,11 @@ class CategoriasFragment : Fragment() {
 
         val adapter = CategoriaAdapter(categorias) { categoria ->
             when (categoria.nombre) {
-                "Ropa" -> findNavController().navigate(R.id.action_categoriasFragment_to_ropaFragment)
-                "Hogar" -> findNavController().navigate(R.id.action_categoriasFragment_to_hogarFragment)
-                "Deportes" -> findNavController().navigate(R.id.action_categoriasFragment_to_deportesFragment)
-                "Accesorios" -> findNavController().navigate(R.id.action_categoriasFragment_to_accesoriosFragment)
+                "Camisas" -> findNavController().navigate(R.id.action_categoriasFragment_to_ropaFragment)
+                "Chaquetas" -> findNavController().navigate(R.id.action_categoriasFragment_to_ropaFragment)
+                "Pantalones" -> findNavController().navigate(R.id.action_categoriasFragment_to_hogarFragment)
+                "Zapatos" -> findNavController().navigate(R.id.action_categoriasFragment_to_deportesFragment)
+                "vestidos" -> findNavController().navigate(R.id.action_categoriasFragment_to_accesoriosFragment)
             }
         }
 
