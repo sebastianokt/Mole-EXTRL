@@ -14,6 +14,7 @@ class RegistroActivity : AppCompatActivity() {
     private lateinit var etCorreo: EditText
     private lateinit var etTelefono: EditText
     private lateinit var etContrasena: EditText
+    private lateinit var cbEsAdmin: CheckBox
     private lateinit var btnRegistrar: Button
     private lateinit var tvnCancelar: TextView
 
@@ -25,6 +26,7 @@ class RegistroActivity : AppCompatActivity() {
         etCorreo = findViewById(R.id.etCorreo)
         etTelefono = findViewById(R.id.etTelefono)
         etContrasena = findViewById(R.id.etContrasena)
+        cbEsAdmin = findViewById(R.id.cbEsAdmin)
         btnRegistrar = findViewById(R.id.btnRegistrar)
         tvnCancelar = findViewById(R.id.cancelar)
 
@@ -42,6 +44,7 @@ class RegistroActivity : AppCompatActivity() {
                     putString("correo", correo)
                     putString("telefono", telefono)
                     putString("contrasena", contrasena)
+                    putBoolean("esAdmin", cbEsAdmin.isChecked)  // <-- Marca si es admin
                     apply()
                 }
 

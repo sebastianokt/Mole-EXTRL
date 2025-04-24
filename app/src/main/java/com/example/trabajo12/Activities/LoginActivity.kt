@@ -44,22 +44,30 @@ class LoginActivity : AppCompatActivity() {
             val password = editTextPassword.text.toString().trim()
 
             if (username.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             Log.d("LoginActivity", "Intento de inicio -> correo: $username, Contraseña: $password")
 
             if (username == savedUsername && password == savedPassword) {
-                Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
+                val esAdmin = sharedPreferences.getBoolean("esAdmin", false)
+
+                if (esAdmin) {
+                    Toast.makeText(this, "Inicio de sesión exitoso como administrador", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
+                }
+
                 val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("esAdmin", esAdmin)
                 startActivity(intent)
                 finish()
             } else {
                 Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
             }
         }
+
 
         textViewRegistrate.setOnClickListener {
             startActivity(Intent(this, RegistroActivity::class.java))

@@ -94,7 +94,16 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"/>
+
         </LinearLayout>
+        <CheckBox
+            android:id="@+id/cbEsAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¿Es administrador?"
+            android:textColor="@color/black"
+            android:layout_marginTop="16dp"/>
+
 
         <!-- Botón Crear -->
         <Button
@@ -118,5 +127,6 @@
             android:textSize="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
     </LinearLayout>
 </ScrollView>

@@ -27,11 +27,11 @@ class CategoriasFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         val categorias = listOf(
-            Categoria(R.drawable.gpro, "Electrónica", 5),
-            Categoria(R.drawable.sudadera, "Ropa", 5),
-            Categoria(R.drawable.lampara, "Hogar", 5),
-            Categoria(R.drawable.balon, "Deportes", 2),
-            Categoria(R.drawable.mochila, "Accesorios", 3)
+            Categoria(R.drawable.camiseta, "Camisas", 5),
+            Categoria(R.drawable.sudadera, "Chaquetas", 5),
+            Categoria(R.drawable.pantalon, "Pantalones", 5),
+            Categoria(R.drawable.zapatos, "Zapatos", 2),
+            Categoria(R.drawable.vestidos, "vestidos", 3)
         )
 
         val adapter = CategoriaAdapter(categorias) { categoria ->

@@ -26,10 +26,7 @@ class AdministrarCuentaFragment : Fragment() {
         val txtCorreo = view.findViewById<TextView>(R.id.txtCorreoCuenta)
 
         val sharedPreferences = requireActivity().getSharedPreferences("UsuarioPrefs", Context.MODE_PRIVATE)
-        val nombre = sharedPreferences.getString("nombre", "Nombre no disponible")
-        val correo = sharedPreferences.getString("correo", "Correo no disponible")
 
-        txtNombre.text = nombre
-        txtCorreo.text = correo
+
     }
 }

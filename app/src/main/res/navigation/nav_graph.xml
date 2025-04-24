@@ -97,26 +97,32 @@
         android:label="Administrador"
         tools:layout="@layout/fragment_administrador">
 
+
         <action
             android:id="@+id/action_administradorFragment_to_administrarCuentaFragment"
             app:destination="@id/administrarCuentaFragment" />
+
 
         <action
             android:id="@+id/action_administradorFragment_to_agregarProductosFragment"
             app:destination="@id/agregarProductosFragment" />
 
+
         <action
             android:id="@+id/action_administradorFragment_to_eliminarProductosFragment"
             app:destination="@id/eliminarProductosFragment" />
+
 
         <action
             android:id="@+id/action_administradorFragment_to_editarProductosFragment"
             app:destination="@id/editarProductosFragment" />
 
+
         <action
             android:id="@+id/action_administradorFragment_to_stockFragment"
             app:destination="@id/stockFragment" />
     </fragment>
+
 
     <fragment
         android:id="@+id/administrarCuentaFragment"
@@ -147,4 +153,9 @@
         android:name="com.example.trabajo12.fragments.StockTiendaFragment"
         android:label="Stock en Tienda"
         tools:layout="@layout/fragment_adm_stock_tienda" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.trabajo12.Activities.LoginActivity"
+        android:label="LoginActivity" />
+
 </navigation>

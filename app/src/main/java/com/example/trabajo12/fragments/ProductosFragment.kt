@@ -30,17 +30,18 @@ class ProductosFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         val productos = listOf(
-            Producto(1, R.drawable.celular, "Smartphone Galaxy A34", "Pantalla AMOLED, cámara triple y batería de larga duración.", 999.999, 10, "Electrónica"),
-            Producto(2, R.drawable.lenovo, "Laptop Lenovo i5", "Laptop de alto rendimiento con 16GB RAM y SSD 512GB.", 2199.500, 7, "Electrónica"),
-            Producto(3, R.drawable.jbg, "Auriculares Inalámbricos JBL", "Calidad de sonido premium con cancelación de ruido.", 349.999, 15, "Electrónica"),
-            Producto(4, R.drawable.tv, "Smart TV 50\"", "Televisor inteligente 4K con Android TV integrado.", 1890.000, 5, "Electrónica"),
-            Producto(5, R.drawable.gpro, "Cámara Deportiva GoPro", "Resistente al agua y con grabación en 4K.", 1299.999, 8, "Electrónica"),
 
             Producto(6, R.drawable.chaqueta, "Chaqueta de cuero", "Diseño moderno, ideal para clima frío.", 599.000, 12, "Ropa"),
             Producto(7, R.drawable.camiseta , "Camiseta Oversize", "Estilo urbano, 100% algodón.", 120.000, 20, "Ropa"),
             Producto(8, R.drawable.pantalon, "Jeans Skinny Azul", "Corte ajustado, perfecto para el día a día.", 220.000, 18, "Ropa"),
             Producto(9, R.drawable.sudadera, "Sudadera con Capucha", "Con interior afelpado, ideal para invierno.", 180.500, 14, "Ropa"),
             Producto(10, R.drawable.zapatos, "Zapatos Deportivos ", "Con amortiguación Air para mayor comodidad.", 499.999, 9, "Ropa"),
+
+            Producto(1, R.drawable.celular, "Smartphone Galaxy A34", "Pantalla AMOLED, cámara triple y batería de larga duración.", 999.999, 10, "Electrónica"),
+            Producto(2, R.drawable.lenovo, "Laptop Lenovo i5", "Laptop de alto rendimiento con 16GB RAM y SSD 512GB.", 2199.500, 7, "Electrónica"),
+            Producto(3, R.drawable.jbg, "Auriculares Inalámbricos JBL", "Calidad de sonido premium con cancelación de ruido.", 349.999, 15, "Electrónica"),
+            Producto(4, R.drawable.tv, "Smart TV 50\"", "Televisor inteligente 4K con Android TV integrado.", 1890.000, 5, "Electrónica"),
+            Producto(5, R.drawable.gpro, "Cámara Deportiva GoPro", "Resistente al agua y con grabación en 4K.", 1299.999, 8, "Electrónica"),
 
             Producto(11, R.drawable.lampara, "Lámpara de Mesa LED", "Iluminación suave con puerto USB.", 89.999, 25, "Hogar"),
             Producto(12, R.drawable.sabanas, "Set de Sábanas Queen", "100% algodón con 4 piezas.", 139.500, 10, "Hogar"),
