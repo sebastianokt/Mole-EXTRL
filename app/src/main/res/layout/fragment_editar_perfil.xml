@@ -17,7 +17,9 @@
             android:layout_gravity="center_horizontal"
             android:contentDescription="@string/foto_perfil"
             android:src="@drawable/perfil"
-            android:layout_marginBottom="24dp"/>
+            android:layout_marginBottom="24dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/rounded_edittext" />
 
         <Button
             android:id="@+id/btnCambiarFoto"
@@ -37,85 +39,50 @@
             android:textStyle="bold"
             android:layout_marginBottom="16dp"/>
 
-        <!-- Nombre -->
-        <LinearLayout
+        <EditText
+            android:id="@+id/etNombre"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="16dp">
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="@string/ingrese_su_nombre_completo"
+            android:paddingStart="16dp"
+            android:inputType="textPersonName"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"/>
 
-
-            <EditText
-                android:id="@+id/etNombre"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="@drawable/rounded_edittext"
-                android:paddingStart="16dp"
-                android:hint="@string/ingrese_su_nombre_completo"
-                android:inputType="textPersonName"
-                android:textColor="@color/black"/>
-        </LinearLayout>
-
-        <!-- Correo -->
-        <LinearLayout
+        <EditText
+            android:id="@+id/etEmail"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="16dp">
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="@string/ingrese_su_correo_electr_nico"
+            android:paddingStart="16dp"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"/>
 
-
-
-            <EditText
-                android:id="@+id/etEmail"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="@drawable/rounded_edittext"
-                android:paddingStart="16dp"
-                android:hint="@string/ingrese_su_correo_electr_nico"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/black"/>
-        </LinearLayout>
-
-        <!-- Teléfono -->
-        <LinearLayout
+        <EditText
+            android:id="@+id/etTelefono"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="16dp">
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="@string/ingrese_su_n_mero_de_tel_fono"
+            android:paddingStart="16dp"
+            android:inputType="phone"
+            android:textColor="@color/black"
+            android:layout_marginBottom="16dp"/>
 
-
-
-            <EditText
-                android:id="@+id/etTelefono"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="@drawable/rounded_edittext"
-                android:paddingStart="16dp"
-                android:hint="@string/ingrese_su_n_mero_de_tel_fono"
-                android:inputType="phone"
-                android:textColor="@color/black"/>
-        </LinearLayout>
-
-        <!-- Contraseña -->
-        <LinearLayout
+        <EditText
+            android:id="@+id/etContrasena"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="24dp">
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Ingrese su contraseña"
+            android:paddingStart="16dp"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:layout_marginBottom="24dp"/>
 
-
-            <EditText
-                android:id="@+id/etContrasena"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="@drawable/rounded_edittext"
-                android:paddingStart="16dp"
-                android:hint="Ingrese su contraseña"
-                android:inputType="textPassword"
-                android:textColor="@color/black"/>
-        </LinearLayout>
-
-        <!-- Botón Guardar -->
         <Button
             android:id="@+id/btnGuardarCambios"
             android:layout_width="match_parent"
@@ -126,3 +93,4 @@
             android:layout_marginTop="8dp"/>
     </LinearLayout>
 </ScrollView>
+

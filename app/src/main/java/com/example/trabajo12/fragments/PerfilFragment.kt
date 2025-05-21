@@ -2,6 +2,7 @@ package com.example.trabajo12.fragments
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -38,13 +39,20 @@ class PerfilFragment : Fragment() {
         val correo = sharedPref.getString("correo", "Correo no registrado")
         val telefono = sharedPref.getString("telefono", "Teléfono no registrado")
         val contrasena = sharedPref.getString("contrasena", "Contraseña no registrada")
+        val fotoUriString = sharedPref.getString("fotoPerfilUri", null)
 
         tvNombre.text = nombre
         tvEmail.text = correo
         tvTelefono.text = telefono
         tvContrasena.text = contrasena
 
-        ivFotoPerfil.setImageResource(R.drawable.perfil)
+        // Mostrar imagen de perfil si existe
+        if (!fotoUriString.isNullOrEmpty()) {
+            val imageUri = Uri.parse(fotoUriString)
+            ivFotoPerfil.setImageURI(imageUri)
+        } else {
+            ivFotoPerfil.setImageResource(R.drawable.perfil) // Imagen por defecto
+        }
 
         btnEditar.setOnClickListener {
             findNavController().navigate(R.id.action_editarperfilde_perfilFragment)

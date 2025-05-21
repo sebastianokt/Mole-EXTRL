@@ -2,14 +2,13 @@ package com.example.trabajo12.fragments
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.widget.*
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.trabajo12.R
@@ -17,6 +16,24 @@ import com.example.trabajo12.R
 class EditarPerfilFragment : Fragment() {
 
     private lateinit var sharedPref: SharedPreferences
+    private lateinit var ivFotoPerfil: ImageView
+    private var uriImagenSeleccionada: Uri? = null
+
+    // Lanza el selector de imágenes
+    private val seleccionarImagenLauncher = registerForActivityResult(
+        ActivityResultContracts.GetContent()
+    ) { uri: Uri? ->
+        uri?.let {
+            uriImagenSeleccionada = it
+            ivFotoPerfil.setImageURI(it)
+
+            // Guardar la URI en SharedPreferences
+            with(sharedPref.edit()) {
+                putString("fotoPerfilUri", it.toString())
+                apply()
+            }
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,7 +45,7 @@ class EditarPerfilFragment : Fragment() {
 
         activity?.title = "Editar Perfil"
 
-        val ivFotoPerfil = view.findViewById<ImageView>(R.id.ivFotoPerfilEditar)
+        ivFotoPerfil = view.findViewById(R.id.ivFotoPerfilEditar)
         val etNombre = view.findViewById<EditText>(R.id.etNombre)
         val etEmail = view.findViewById<EditText>(R.id.etEmail)
         val etTelefono = view.findViewById<EditText>(R.id.etTelefono)
@@ -36,16 +53,22 @@ class EditarPerfilFragment : Fragment() {
         val btnCambiarFoto = view.findViewById<Button>(R.id.btnCambiarFoto)
         val btnGuardar = view.findViewById<Button>(R.id.btnGuardarCambios)
 
+        // Cargar foto guardada si existe
+        val fotoUriGuardada = sharedPref.getString("fotoPerfilUri", null)
+        if (fotoUriGuardada != null) {
+            ivFotoPerfil.setImageURI(Uri.parse(fotoUriGuardada))
+        } else {
+            ivFotoPerfil.setImageResource(R.drawable.perfil) // imagen por defecto
+        }
+
+        // Cargar datos existentes
         etNombre.setText(sharedPref.getString("nombre", ""))
         etEmail.setText(sharedPref.getString("correo", ""))
         etTelefono.setText(sharedPref.getString("telefono", ""))
         etContrasena.setText(sharedPref.getString("contrasena", ""))
 
-        ivFotoPerfil.setImageResource(R.drawable.perfil)
-
         btnCambiarFoto.setOnClickListener {
-            Toast.makeText(context, ")",
-                Toast.LENGTH_SHORT).show()
+            seleccionarImagenLauncher.launch("image/*")
         }
 
         btnGuardar.setOnClickListener {
@@ -71,7 +94,7 @@ class EditarPerfilFragment : Fragment() {
             putString("correo", email)
             putString("telefono", telefono)
             putString("contrasena", contrasena)
-            apply() // Guardar cambios
+            apply()
         }
         Toast.makeText(context, "Perfil actualizado correctamente", Toast.LENGTH_SHORT).show()
     }
