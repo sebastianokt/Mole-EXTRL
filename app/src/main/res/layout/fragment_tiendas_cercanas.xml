@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,7 +8,9 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,8 +35,9 @@
                 android:background="@drawable/borde_dashed_circle"
                 android:padding="24dp"/>
         </LinearLayout>
+
         <TextView
-            android:text="@string/tienda_en_chapinero"
+            android:text="@string/tienda_Ubicación"
             android:textSize="15sp"
             android:textStyle="bold"
             android:textColor="#000000"
@@ -43,14 +45,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <ImageView
-            android:id="@+id/imagetienda2"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/tiendafisica"
-            android:padding="24dp"/>
         <TextView
             android:text="@string/ubicate_en_el_mapa"
             android:textSize="15sp"
@@ -60,15 +54,38 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <ImageView
-            android:id="@+id/imagenmaps"
+        <!-- MAPA GRANDE Y CENTRADO -->
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/maps"
-            android:padding="24dp"/>
+            android:layout_height="300dp"
+            android:layout_marginBottom="24dp"
+            android:layout_gravity="center" />
 
+        <!-- BOTONES DE UBICACIÓN -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnLocation1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/chapinero_bogota"
+                android:backgroundTint="@color/azul"/>
+
+            <Button
+                android:id="@+id/btnLocation2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/Suba"
+                android:backgroundTint="@color/azul"/>
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

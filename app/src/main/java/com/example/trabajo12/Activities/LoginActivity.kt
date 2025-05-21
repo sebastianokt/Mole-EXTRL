@@ -11,10 +11,18 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.trabajo12.R
 import com.example.trabajo12.fragments.HomeActivity
-import com.example.trabajo12.fragments.InicioFragment
-import com.example.trabajo12.fragments.PerfilFragment
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var btGoole: Button
+    private lateinit var mGoogleSignInClient: GoogleSignInClient
+    private val RC_SIGN_IN = 123
+    private val TAG = "GoogleSignIn"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -80,6 +88,55 @@ class LoginActivity : AppCompatActivity() {
 
         textViewRecuperar.setOnClickListener {
             startActivity(Intent(this, RecuperarContrasena::class.java))
+        }
+        // 👉 Configurar Google Sign In
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .requestProfile()
+            .build()
+
+        // Crear el cliente de Google SignIn
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+
+        btGoole= findViewById(R.id.btGoole)
+
+        btGoole.setOnClickListener {
+            signIn()
+        }
+    }
+
+    private fun signIn() {
+        val signInIntent = mGoogleSignInClient.signInIntent
+        startActivityForResult(signInIntent, RC_SIGN_IN)
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == RC_SIGN_IN) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            handleSignInResult(task)
+        }
+    }
+
+    private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
+        try {
+            val account = completedTask.getResult(ApiException::class.java)
+
+            // Inicio de sesión exitoso
+            Log.d(TAG, "signInSuccess: ${account.email}")
+            Toast.makeText(this, "Bienvenido ${account.displayName}", Toast.LENGTH_SHORT).show()
+
+            // Ir a MainActivity
+            intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("USER_EMAIL", account.email)
+            intent.putExtra("USER_NAME", account.displayName)
+            startActivity(intent)
+
+        } catch (e: ApiException) {
+            // Error en el inicio de sesión
+
+
+            Toast.makeText(this, "mensaje", Toast.LENGTH_SHORT).show()
         }
     }
 }
