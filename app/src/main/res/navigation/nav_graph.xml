@@ -59,7 +59,7 @@
     <fragment
         android:id="@+id/electronica"
         android:name="com.example.trabajo12.fragments.ElectronicaFragment"
-        android:label="Ropa"
+        android:label="electro"
         tools:layout="@layout/fragment_productos" />
 
     <fragment

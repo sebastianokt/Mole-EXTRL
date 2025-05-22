@@ -40,7 +40,7 @@ class CategoriasFragment : Fragment() {
                 "Chaquetas" -> findNavController().navigate(R.id.action_categoriasFragment_to_electroFragment)
                 "Pantalones" -> findNavController().navigate(R.id.action_categoriasFragment_to_hogarFragment)
                 "Zapatos" -> findNavController().navigate(R.id.action_categoriasFragment_to_deportesFragment)
-                "vestidos" -> findNavController().navigate(R.id.action_categoriasFragment_to_accesoriosFragment)
+                "Vestidos" -> findNavController().navigate(R.id.action_categoriasFragment_to_accesoriosFragment)
             }
         }
 
