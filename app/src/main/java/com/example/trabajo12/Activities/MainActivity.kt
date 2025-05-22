@@ -1,6 +1,7 @@
 package com.example.trabajo12.Activities
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.navigation.NavController
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     private lateinit var drawerLayout: androidx.drawerlayout.widget.DrawerLayout
+    private lateinit var navView: NavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,24 +35,42 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment?.findNavController()!!
 
         drawerLayout = findViewById(R.id.drawer_layout)
-        val navView: NavigationView = findViewById(R.id.nav_view)
+        navView = findViewById(R.id.nav_view)
 
+        val esAdmin = intent.getBooleanExtra("esAdmin", false)
 
-
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.InicioFragment,
-                R.id.categoriasFragment,
-                R.id.ProductosFragment,
-                R.id.CarritoFragment,
-                R.id.PerfilFragment,
-                R.id.TiendasCercanasFragment
-        ),
-            drawerLayout
-        )
+        appBarConfiguration = if (esAdmin) {
+            AppBarConfiguration(
+                setOf(
+                    R.id.InicioFragment,
+                    R.id.categoriasFragment,
+                    R.id.ProductosFragment,
+                    R.id.CarritoFragment,
+                    R.id.PerfilFragment,
+                    R.id.TiendasCercanasFragment,
+                    R.id.administradorFragment
+                ),
+                drawerLayout
+            )
+        } else {
+            AppBarConfiguration(
+                setOf(
+                    R.id.InicioFragment,
+                    R.id.categoriasFragment,
+                    R.id.ProductosFragment,
+                    R.id.CarritoFragment,
+                    R.id.PerfilFragment,
+                    R.id.TiendasCercanasFragment
+                ),
+                drawerLayout
+            )
+        }
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        navView.menu.findItem(R.id.administradorFragment).isVisible = esAdmin
+
         navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.cerrar_sesion -> {
@@ -59,23 +79,21 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 else -> {
-                    navController.navigate(menuItem.itemId)
+                    menuItem.isChecked = true
                     drawerLayout.closeDrawers()
+                    navController.navigate(menuItem.itemId)
                     true
                 }
             }
         }
 
-        val esAdmin = intent.getBooleanExtra("esAdmin", false)
-
-        if (esAdmin) {
-            navController.navigate(R.id.administradorFragment)
-        }
     }
+
     private fun logout() {
         val sharedPref = getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
         with(sharedPref.edit()) {
             putBoolean("is_logged_in", false)
+            putBoolean("es_admin", false)
             apply()
         }
 
@@ -87,6 +105,7 @@ class MainActivity : AppCompatActivity() {
                 .build()
         )
     }
+
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }

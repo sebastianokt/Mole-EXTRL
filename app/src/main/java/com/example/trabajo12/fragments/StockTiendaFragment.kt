@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.trabajo12.R
 import com.example.trabajo12.adapters.StockAdapter
 import com.example.trabajo12.models.Producto
+import com.example.trabajo12.models.ProductosData
 
 class StockTiendaFragment : Fragment() {
 
@@ -26,35 +27,7 @@ class StockTiendaFragment : Fragment() {
         recyclerStock = view.findViewById(R.id.recyclerViewStock)
         recyclerStock.layoutManager = LinearLayoutManager(requireContext())
 
-        val productos = obtenerListaDeProductos(requireContext())
-        recyclerStock.adapter = StockAdapter(productos)
-    }
-
-    private fun obtenerListaDeProductos(context: Context): MutableList<Producto> {
-        val prefs = context.getSharedPreferences("productos", Context.MODE_PRIVATE)
-        val listaString = prefs.getStringSet("productos_lista", emptySet()) ?: emptySet()
-        val listaProductos = mutableListOf<Producto>()
-
-        for (linea in listaString) {
-            val partes = linea.split("|")
-            if (partes.size >= 7) {
-                try {
-                    val producto = Producto(
-                        id = partes[0].toInt(),
-                        imagen = partes[1].toInt(),
-                        nombre = partes[2],
-                        descripcion = partes[3],
-                        precio = partes[4].toDouble(),
-                        cantidad = partes[5].toInt(),
-                        categoria = partes[6]
-                    )
-                    listaProductos.add(producto)
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                }
-            }
-        }
-
-        return listaProductos
+        val adapter = StockAdapter(ProductosData.productos)
+        recyclerStock.adapter = adapter
     }
 }

@@ -38,25 +38,43 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/nombre_del_producto"
-            android:layout_marginBottom="16dp" />
+            android:inputType="text"/>
 
+        <EditText
+            android:id="@+id/edtDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/product_description"
+            android:inputType="textMultiLine"
+            android:minLines="3"/>
 
         <EditText
             android:id="@+id/etPrecioProducto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/precio"
-            android:inputType="numberDecimal"
-            android:layout_marginBottom="24dp" />
+            android:inputType="numberDecimal"/>
 
+        <EditText
+            android:id="@+id/etCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Categoría"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/etCantidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cantidad disponible"
+            android:inputType="number"/>
 
         <Button
             android:id="@+id/btnGuardarProducto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/guardar_cambios"
-            android:backgroundTint="@color/azul"
-            android:textColor="@android:color/white" />
+            android:layout_marginTop="16dp"
+            android:text="@string/guardar_producto"/>
 
     </LinearLayout>
 </ScrollView>

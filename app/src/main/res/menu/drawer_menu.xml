@@ -26,6 +26,10 @@
         <item
             android:id="@+id/TiendasCercanasFragment"
             android:title="@string/tiendas_cercanas"/>
+        <item
+            android:id="@+id/administradorFragment"
+            android:title="@string/Administrar"
+            android:visible="false" />
     </group>
 
     <item android:title="@string/opciones">

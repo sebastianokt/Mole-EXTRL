@@ -25,7 +25,6 @@ class AdministradorFragment : Fragment() {
         val btnAdminCuenta = view.findViewById<Button>(R.id.Adm_Cuenta)
         val btnAgregarProductos = view.findViewById<Button>(R.id.Adm_Agregar)
         val btnEliminarProductos = view.findViewById<Button>(R.id.Adm_Eliminar)
-        val btnEditarProductos = view.findViewById<Button>(R.id.Adm_Editar)
         val btnStock = view.findViewById<Button>(R.id.Adm_Stock)
 
         // Navegar a Administrar Cuenta
@@ -43,10 +42,6 @@ class AdministradorFragment : Fragment() {
             findNavController().navigate(R.id.action_administradorFragment_to_eliminarProductosFragment)
         }
 
-        // Navegar a Editar Productos
-        btnEditarProductos.setOnClickListener {
-            findNavController().navigate(R.id.action_administradorFragment_to_editarProductosFragment)
-        }
 
         // Navegar a Stock en Tienda
         btnStock.setOnClickListener {

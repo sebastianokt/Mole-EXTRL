@@ -11,7 +11,7 @@ import com.example.trabajo12.R
 import com.example.trabajo12.models.Producto
 
 class EliminarProductoAdapter(
-    private val productos: List<Producto>,
+    private val productos: MutableList<Producto>,
     private val onEliminarClick: (Producto) -> Unit
 ) : RecyclerView.Adapter<EliminarProductoAdapter.ViewHolder>() {
 

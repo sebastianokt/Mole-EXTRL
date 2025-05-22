@@ -96,4 +96,6 @@
     <string name="Suba">Suba-Bogotá</string>
     <string name="chapinero_bogota">Chapinero-Bogota</string>
     <string name="cedula">cedula</string>
+    <string name="Administrar">Administrar</string>
+    <string name="guardar_producto">Guardar Producto</string>
 </resources>
