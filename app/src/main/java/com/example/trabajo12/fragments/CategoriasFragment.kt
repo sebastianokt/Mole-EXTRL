@@ -31,13 +31,13 @@ class CategoriasFragment : Fragment() {
             Categoria(R.drawable.sudadera, "Chaquetas", 5),
             Categoria(R.drawable.pantalon, "Pantalones", 5),
             Categoria(R.drawable.zapatos, "Zapatos", 2),
-            Categoria(R.drawable.vestidos, "vestidos", 3)
+            Categoria(R.drawable.vestidos, "Vestidos", 3)
         )
 
         val adapter = CategoriaAdapter(categorias) { categoria ->
             when (categoria.nombre) {
                 "Camisas" -> findNavController().navigate(R.id.action_categoriasFragment_to_ropaFragment)
-                "Chaquetas" -> findNavController().navigate(R.id.action_categoriasFragment_to_ropaFragment)
+                "Chaquetas" -> findNavController().navigate(R.id.action_categoriasFragment_to_electroFragment)
                 "Pantalones" -> findNavController().navigate(R.id.action_categoriasFragment_to_hogarFragment)
                 "Zapatos" -> findNavController().navigate(R.id.action_categoriasFragment_to_deportesFragment)
                 "vestidos" -> findNavController().navigate(R.id.action_categoriasFragment_to_accesoriosFragment)

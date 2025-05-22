@@ -24,11 +24,11 @@ class HomeActivity : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         val productos = listOf(
-            Producto(11, R.drawable.lampara, "Lámpara de Mesa LED", "Iluminación suave con puerto USB.", 89.999, 25, "Hogar"),
-            Producto(12, R.drawable.sabanas, "Set de Sábanas Queen", "100% algodón con 4 piezas.", 139.500, 10, "Hogar"),
-            Producto(13, R.drawable.silla, "Silla Ergonómica", "Ideal para home office, con soporte lumbar.", 350.00, 6, "Hogar"),
-            Producto(14, R.drawable.cafetera, "Cafetera", "Para 12 tazas, con apagado automático.", 199.900, 8, "Hogar"),
-            Producto(15, R.drawable.almohada, "Almohada", "Espuma con memoria, ideal para cervicales.", 79.000, 30, "Hogar")
+            Producto(17, R.drawable.pantalon2, "Pantalon Cargo ", "Pantalon Cargo cafe.", 899.000, 3, "Pantalones"),
+            Producto(8, R.drawable.pantalon, "Jeans Skinny Azul", "Corte ajustado, perfecto para el día a día.", 220.000, 18, "Pantalones"),
+            Producto(18, R.drawable.pantalon3, "Pantalon Cargo", "Pantalon cargo gris", 150.009, 10, "Pantalones"),
+            Producto(19, R.drawable.pantalon4, "Pantalon gris con manchas", "Pantalon gris con manchas negras.", 590.999, 25, "Pantalones"),
+            Producto(20, R.drawable.pantalon5, "Pantalon gris", "Pantalones grises preciosos.", 289.000, 5, "Pantalones")
         )
 
         val adapter = ProductosAdapter(productos)

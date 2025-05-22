@@ -38,6 +38,9 @@
             android:id="@+id/action_categoriasFragment_to_ropaFragment"
             app:destination="@id/ropaFragment" />
         <action
+            android:id="@+id/action_categoriasFragment_to_electroFragment"
+            app:destination="@id/electronica" />
+        <action
             android:id="@+id/action_categoriasFragment_to_hogarFragment"
             app:destination="@id/hogarFragment" />
         <action
@@ -51,6 +54,11 @@
     <fragment
         android:id="@+id/ropaFragment"
         android:name="com.example.trabajo12.fragments.RopaFragment"
+        android:label="Ropa"
+        tools:layout="@layout/fragment_productos" />
+    <fragment
+        android:id="@+id/electronica"
+        android:name="com.example.trabajo12.fragments.ElectronicaFragment"
         android:label="Ropa"
         tools:layout="@layout/fragment_productos" />
 

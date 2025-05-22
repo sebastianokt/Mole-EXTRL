@@ -24,8 +24,8 @@ class DeportesFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         val productos = listOf(
-            Producto(16, R.drawable.balon, "Balón de Fútbol ", "Tamaño profesional, cosido a máquina.", 99.999, 15, "Deportes"),
-            Producto(17, R.drawable.bicicleta, "Bicicleta ", "21 velocidades, suspensión delantera.", 899.000, 3, "Deportes")
+            Producto(9, R.drawable.zapatos2, "Zapatos negros", "Zapatos preciosos negros.", 180.500, 14, "Zapatos"),
+            Producto(10, R.drawable.zapatos, "Zapatos Deportivos ", "Con amortiguación Air para mayor comodidad.", 499.999, 9, "Zapatos")
         )
 
         val adapter = ProductosAdapter(productos)

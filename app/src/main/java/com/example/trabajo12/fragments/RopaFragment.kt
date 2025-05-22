@@ -24,11 +24,11 @@ class RopaFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         val productos = listOf(
-            Producto(6, R.drawable.chaqueta, "Chaqueta de cuero", "Diseño moderno, ideal para clima frío.", 599.000, 12, "Ropa"),
-            Producto(7, R.drawable.camiseta, "Camiseta Oversize", "Estilo urbano, 100% algodón.", 120.000, 20, "Ropa"),
-            Producto(8, R.drawable.pantalon, "Jeans Skinny Azul", "Corte ajustado, perfecto para el día a día.", 220.000, 18, "Ropa"),
-            Producto(9, R.drawable.sudadera, "Sudadera con Capucha", "Con interior afelpado, ideal para invierno.", 180.500, 14, "Ropa"),
-            Producto(10, R.drawable.zapatos, "Zapatos Deportivos Nike", "Con amortiguación Air para mayor comodidad.", 499.999, 9, "Ropa")
+            Producto(7, R.drawable.camiseta , "Camiseta Oversize", "Estilo urbano, 100% algodón.", 120.000, 20, "Camisa"),
+            Producto(4, R.drawable.camisa2, "Camisa Azul", "Camisa Azul preciosa.", 189.000, 5, "Camisa"),
+            Producto(5, R.drawable.camisa3, "Camiseta blanca con puntos", "Camiseta blanca con puntos muy buenas.", 199.999, 8, "Camisa"),
+            Producto(11, R.drawable.camisa4, "Camiseta negra", "Iluminación suave con puerto USB.", 89.999, 25, "Camisa"),
+            Producto(12, R.drawable.camisa5, "Camisa verde", "100% algodón.", 139.500, 10, "Camisa")
         )
 
         val adapter = ProductosAdapter(productos)

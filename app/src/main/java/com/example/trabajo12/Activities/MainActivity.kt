@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavOptions
+import androidx.navigation.ui.navigateUp
 import com.example.trabajo12.R
 import com.google.android.material.navigation.NavigationView
 
@@ -18,7 +19,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     private lateinit var drawerLayout: androidx.drawerlayout.widget.DrawerLayout
-    private lateinit var drawerToggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,15 +35,7 @@ class MainActivity : AppCompatActivity() {
         drawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
 
-        drawerToggle = ActionBarDrawerToggle(
-            this,
-            drawerLayout,
-            toolbar,
-            R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close
-        )
-        drawerLayout.addDrawerListener(drawerToggle)
-        drawerToggle.syncState()
+
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
@@ -52,8 +44,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.ProductosFragment,
                 R.id.CarritoFragment,
                 R.id.PerfilFragment,
-                R.id.TiendasCercanasFragment,
-                R.id.cerrar_sesion
+                R.id.TiendasCercanasFragment
         ),
             drawerLayout
         )
@@ -97,6 +88,6 @@ class MainActivity : AppCompatActivity() {
         )
     }
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp() || super.onSupportNavigateUp()
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
