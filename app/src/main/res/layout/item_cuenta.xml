@@ -26,7 +26,7 @@
         android:id="@+id/txtCedulaCuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cedula"
+        android:text="@string/contrase_a"
         android:textSize="14sp"
         android:textColor="#555" />
 
@@ -45,11 +45,6 @@
         android:gravity="end"
         android:layout_marginTop="8dp">
 
-        <Button
-            android:id="@+id/btnEditarCuenta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/editar" />
 
         <Button
             android:id="@+id/btnEliminarCuenta"

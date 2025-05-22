@@ -32,7 +32,8 @@ class RegistroActivity : AppCompatActivity() {
             imageProfile.setImageURI(selectedImageUri)
         }
     }
-
+    private val PREFS_NAME = "CuentasPrefs"
+    private val CUENTAS_COUNT_KEY = "cuentas_count"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
@@ -74,7 +75,7 @@ class RegistroActivity : AppCompatActivity() {
                     }
                     apply()
                 }
-
+                guardarCuentaAdministrable(nombre, correo, telefono,contrasena)
                 Toast.makeText(this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()
@@ -87,5 +88,18 @@ class RegistroActivity : AppCompatActivity() {
             startActivity(Intent(this, HomeActivity::class.java))
             finish()
         }
+    }
+    private fun guardarCuentaAdministrable(nombre: String, correo: String, telefono: String, contrasena:String) {
+        val sharedPrefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        val count = sharedPrefs.getInt(CUENTAS_COUNT_KEY, 0)
+        val editor = sharedPrefs.edit()
+
+        editor.putString("cuenta_${count}_nombre", nombre)
+        editor.putString("cuenta_${count}_correo", correo)
+        editor.putString("cuenta_${count}_celular", telefono)
+        editor.putString("cuenta_${count}_cedula", contrasena)
+
+        editor.putInt(CUENTAS_COUNT_KEY, count + 1)
+        editor.apply()
     }
 }

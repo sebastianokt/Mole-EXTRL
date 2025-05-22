@@ -3,6 +3,7 @@ package com.example.trabajo12.fragments
 import CuentaAdapter
 import android.app.AlertDialog
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +20,9 @@ class AdministrarCuentaFragment : Fragment() {
 
     private lateinit var cuentas: MutableList<Cuenta>
     private lateinit var adapter: CuentaAdapter
+    private lateinit var sharedPreferences: SharedPreferences
+    private val PREFS_NAME = "CuentasPrefs"
+    private val CUENTAS_COUNT_KEY = "cuentas_count"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,11 +34,15 @@ class AdministrarCuentaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        sharedPreferences = requireActivity().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewCuentas)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         cuentas = cargarCuentas()
-        adapter = CuentaAdapter(cuentas)
+        adapter = CuentaAdapter(cuentas) { position ->
+            mostrarDialogoConfirmacionEliminar(position)
+        }
         recyclerView.adapter = adapter
 
         val btnAgregar = view.findViewById<FloatingActionButton>(R.id.AgregarCuenta)
@@ -55,34 +63,80 @@ class AdministrarCuentaFragment : Fragment() {
             .setView(dialogView)
             .setPositiveButton("Guardar") { _, _ ->
                 val cuenta = Cuenta(
-                    etNombre.text.toString(),
-                    etCorreo.text.toString(),
-                    etCedula.text.toString(),
-                    etCelular.text.toString()
+                    nombre = etNombre.text.toString(),
+                    correo = etCorreo.text.toString(),
+                    cedula = etCedula.text.toString(),
+                    celular = etCelular.text.toString()
                 )
                 guardarCuenta(cuenta)
-                cuentas.add(cuenta)
-                adapter.notifyItemInserted(cuentas.size - 1)
             }
             .setNegativeButton("Cancelar", null)
             .show()
     }
 
-    private fun guardarCuenta(cuenta: Cuenta) {
-        val prefs = requireContext().getSharedPreferences("CuentasPrefs", Context.MODE_PRIVATE)
-        val editor = prefs.edit()
-        val lista = prefs.getStringSet("cuentas", mutableSetOf())?.toMutableSet() ?: mutableSetOf()
-        lista.add("${cuenta.nombre}|${cuenta.correo}|${cuenta.cedula}|${cuenta.celular}")
-        editor.putStringSet("cuentas", lista)
-        editor.apply()
+    private fun mostrarDialogoConfirmacionEliminar(position: Int) {
+        AlertDialog.Builder(requireContext())
+            .setTitle("Confirmar eliminación")
+            .setMessage("¿Estás seguro de que deseas eliminar esta cuenta?")
+            .setPositiveButton("Eliminar") { _, _ ->
+                eliminarCuenta(position)
+            }
+            .setNegativeButton("Cancelar", null)
+            .show()
     }
 
     private fun cargarCuentas(): MutableList<Cuenta> {
-        val prefs = requireContext().getSharedPreferences("CuentasPrefs", Context.MODE_PRIVATE)
-        val lista = prefs.getStringSet("cuentas", emptySet()) ?: emptySet()
-        return lista.mapNotNull {
-            val partes = it.split("|")
-            if (partes.size == 4) Cuenta(partes[0], partes[1], partes[2], partes[3]) else null
-        }.toMutableList()
+        val cuentasList = mutableListOf<Cuenta>()
+        val count = sharedPreferences.getInt(CUENTAS_COUNT_KEY, 0)
+
+        for (i in 0 until count) {
+            val nombre = sharedPreferences.getString("cuenta_${i}_nombre", "") ?: ""
+            val correo = sharedPreferences.getString("cuenta_${i}_correo", "") ?: ""
+            val cedula = sharedPreferences.getString("cuenta_${i}_cedula", "") ?: ""
+            val celular = sharedPreferences.getString("cuenta_${i}_celular", "") ?: ""
+
+            if (nombre.isNotEmpty() || correo.isNotEmpty() || cedula.isNotEmpty() || celular.isNotEmpty()) {
+                cuentasList.add(Cuenta(nombre, correo, cedula, celular))
+            }
+        }
+
+        return cuentasList
+    }
+
+    private fun guardarCuenta(nuevaCuenta: Cuenta) {
+        cuentas.add(nuevaCuenta)
+        actualizarSharedPreferences()
+        adapter.updateCuentas(cuentas)
+    }
+
+    private fun eliminarCuenta(position: Int) {
+        cuentas.removeAt(position)
+        actualizarSharedPreferences()
+        adapter.updateCuentas(cuentas)
+    }
+
+    private fun actualizarSharedPreferences() {
+        val editor = sharedPreferences.edit()
+
+        // Limpiar todas las cuentas existentes
+        val count = sharedPreferences.getInt(CUENTAS_COUNT_KEY, 0)
+        for (i in 0 until count) {
+            editor.remove("cuenta_${i}_nombre")
+            editor.remove("cuenta_${i}_correo")
+            editor.remove("cuenta_${i}_cedula")
+            editor.remove("cuenta_${i}_celular")
+        }
+
+        // Guardar las cuentas actualizadas
+        for ((index, cuenta) in cuentas.withIndex()) {
+            editor.putString("cuenta_${index}_nombre", cuenta.nombre)
+            editor.putString("cuenta_${index}_correo", cuenta.correo)
+            editor.putString("cuenta_${index}_cedula", cuenta.cedula)
+            editor.putString("cuenta_${index}_celular", cuenta.celular)
+        }
+
+        // Actualizar el contador
+        editor.putInt(CUENTAS_COUNT_KEY, cuentas.size)
+        editor.apply()
     }
 }
