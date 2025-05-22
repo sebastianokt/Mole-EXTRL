@@ -1,41 +1,33 @@
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trabajo12.R
 import com.example.trabajo12.models.Cuenta
 
-class CuentaAdapter(
-    private val cuentas: List<Cuenta>,
-    private val onEditarClick: (Cuenta) -> Unit,
-    private val onEliminarClick: (Cuenta) -> Unit
-) : RecyclerView.Adapter<CuentaAdapter.ViewHolder>() {
+class CuentaAdapter(private val cuentas: List<Cuenta>) :
+    RecyclerView.Adapter<CuentaAdapter.CuentaViewHolder>() {
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val nombre = itemView.findViewById<TextView>(R.id.txtNombreCuenta)
-        val correo = itemView.findViewById<TextView>(R.id.txtCorreoCuenta)
-        val btnEditar = itemView.findViewById<Button>(R.id.btnEditarCuenta)
-        val btnEliminar = itemView.findViewById<Button>(R.id.btnEliminarCuenta)
-
-        fun bind(cuenta: Cuenta) {
-            nombre.text = cuenta.nombre
-            correo.text = cuenta.correo
-
-            btnEditar.setOnClickListener { onEditarClick(cuenta) }
-            btnEliminar.setOnClickListener { onEliminarClick(cuenta) }
-        }
+    class CuentaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val nombre = view.findViewById<TextView>(R.id.txtNombreCuenta)
+        val correo = view.findViewById<TextView>(R.id.txtCorreoCuenta)
+        val cedula = view.findViewById<TextView>(R.id.txtCedulaCuenta)
+        val celular = view.findViewById<TextView>(R.id.txtCelularCuenta)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val vista = LayoutInflater.from(parent.context)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CuentaViewHolder {
+        val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_cuenta, parent, false)
-        return ViewHolder(vista)
+        return CuentaViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(cuentas[position])
+    override fun onBindViewHolder(holder: CuentaViewHolder, position: Int) {
+        val cuenta = cuentas[position]
+        holder.nombre.text = "Nombre: ${cuenta.nombre}"
+        holder.correo.text = "Correo: ${cuenta.correo}"
+        holder.cedula.text = "Cédula: ${cuenta.cedula}"
+        holder.celular.text = "Celular: ${cuenta.celular}"
     }
 
     override fun getItemCount(): Int = cuentas.size

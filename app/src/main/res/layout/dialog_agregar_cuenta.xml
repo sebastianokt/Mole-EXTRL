@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:padding="20dp">
 
-
+    <!-- Encabezado con logo y título -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,30 +16,48 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/logo"
-            android:contentDescription="Logo"
             android:layout_marginEnd="8dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Agregar Cuenta"
+            android:text="@string/agregar_cuenta"
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
 
-
+    <!-- Campo: Nombre -->
     <EditText
         android:id="@+id/editNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre" />
+        android:hint="@string/nombre_de_usuario" />
 
+    <!-- Campo: Correo -->
     <EditText
         android:id="@+id/editCorreo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Correo"
-        android:inputType="textEmailAddress"/>
+        android:hint="@string/correo_electr_nico"
+        android:inputType="textEmailAddress" />
+
+    <!-- Campo: Cédula -->
+    <EditText
+        android:id="@+id/editCedula"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/cedula"
+        android:inputType="number" />
+
+    <!-- Campo: Celular -->
+    <EditText
+        android:id="@+id/editCelular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/numero_telefono"
+        android:inputType="phone" />
+
+    <!-- Botón Agregar -->
     <Button
         android:id="@+id/btnAgregarCuenta"
         android:layout_width="match_parent"
@@ -48,5 +66,4 @@
         android:text="@string/agregar"
         android:textColor="#FFFFFF"
         android:backgroundTint="@color/azul" />
-
 </LinearLayout>

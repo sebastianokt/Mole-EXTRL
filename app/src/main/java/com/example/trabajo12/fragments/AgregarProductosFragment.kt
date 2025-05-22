@@ -17,7 +17,6 @@ class AgregarProductosFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_adm_agregar_productos, container, false)
     }
 
@@ -35,17 +34,35 @@ class AgregarProductosFragment : Fragment() {
             if (nombre.isNotEmpty() && precio.isNotEmpty()) {
                 val sharedPreferences = requireActivity().getSharedPreferences("ProductosPrefs", Context.MODE_PRIVATE)
                 val editor = sharedPreferences.edit()
-                editor.putString("nombreProducto", nombre)
-                editor.putString("precioProducto", precio)
+
+                // Obtener productos existentes
+                val productosGuardados = sharedPreferences.getStringSet("productos", mutableSetOf())?.toMutableSet() ?: mutableSetOf()
+
+                // Crear un string con nombre|precio
+                val nuevoProducto = "$nombre|$precio"
+                productosGuardados.add(nuevoProducto)
+
+                // Guardar nuevamente
+                editor.putStringSet("productos", productosGuardados)
                 editor.apply()
 
                 Toast.makeText(requireContext(), "Producto guardado correctamente", Toast.LENGTH_SHORT).show()
-
                 etNombreProducto.text.clear()
                 etPrecioProducto.text.clear()
             } else {
                 Toast.makeText(requireContext(), "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
             }
+            val sharedPreferences = requireContext().getSharedPreferences("ProductosPrefs", Context.MODE_PRIVATE)
+            val productosSet = sharedPreferences.getStringSet("productos", emptySet())
+
+            val listaProductos = productosSet?.map {
+                val partes = it.split("|")
+                val nombre = partes[0]
+                val precio = partes[1]
+                "Nombre: $nombre, Precio: $precio"
+            } ?: emptyList()
+
+
         }
     }
 }

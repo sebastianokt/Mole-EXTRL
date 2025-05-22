@@ -1,9 +1,7 @@
 package com.example.trabajo12.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -11,56 +9,55 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trabajo12.R
 import com.example.trabajo12.adapters.ProductosAdapter
+import com.example.trabajo12.models.Carrito
 import com.example.trabajo12.models.Producto
 
 class EliminarProductosFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var productosAdapter: ProductosAdapter
-    private lateinit var productos: MutableList<Producto>
-    private lateinit var btnEliminarSeleccionados: Button
+    private lateinit var btnEliminar: Button
+    private lateinit var adapter: ProductosAdapter
+    private var productosCarrito: MutableList<Producto> = mutableListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_adm_eliminar_productos, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    ): View {
+        val view = inflater.inflate(R.layout.fragment_adm_eliminar_productos, container, false)
 
         recyclerView = view.findViewById(R.id.recyclerViewEliminarProductos)
+        btnEliminar = view.findViewById(R.id.btnEliminarSeleccionados)
+
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        cargarProductos()
 
-        productos = obtenerListaDeProductos()
-
-        productosAdapter = ProductosAdapter(productos)
-        recyclerView.adapter = productosAdapter
-
-        btnEliminarSeleccionados = view.findViewById(R.id.btnEliminarSeleccionados)
-        btnEliminarSeleccionados.setOnClickListener {
+        btnEliminar.setOnClickListener {
             eliminarProductosSeleccionados()
         }
+
+        return view
+    }
+
+    private fun cargarProductos() {
+        productosCarrito = Carrito.obtenerProductos().toMutableList()
+        adapter = ProductosAdapter(productosCarrito)
+        recyclerView.adapter = adapter
     }
 
     private fun eliminarProductosSeleccionados() {
-        val productosSeleccionados = productosAdapter.obtenerProductosSeleccionados()
+        val seleccionados = adapter.obtenerProductosSeleccionados()
 
-        if (productosSeleccionados.isNotEmpty()) {
-            productos.removeAll(productosSeleccionados)
-            productosAdapter = ProductosAdapter(productos) // reinicia adaptador para limpiar selección
-            recyclerView.adapter = productosAdapter
-
-            Toast.makeText(requireContext(), "Productos eliminados correctamente", Toast.LENGTH_SHORT).show()
-        } else {
-            Toast.makeText(requireContext(), "Por favor, selecciona productos para eliminar", Toast.LENGTH_SHORT).show()
+        if (seleccionados.isEmpty()) {
+            Toast.makeText(requireContext(), "No has seleccionado productos", Toast.LENGTH_SHORT).show()
+            return
         }
-    }
 
-    private fun obtenerListaDeProductos(): MutableList<Producto> {
-        return mutableListOf(
+        for (producto in seleccionados) {
+            Carrito.eliminarProducto(producto)
+            productosCarrito.remove(producto)
+        }
 
-        )
+        adapter.eliminarProductosSeleccionados()
+        Toast.makeText(requireContext(), "Productos eliminados", Toast.LENGTH_SHORT).show()
     }
 }

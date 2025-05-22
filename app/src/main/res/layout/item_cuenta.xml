@@ -22,6 +22,22 @@
         android:textSize="14sp"
         android:textColor="#555" />
 
+    <TextView
+        android:id="@+id/txtCedulaCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cedula"
+        android:textSize="14sp"
+        android:textColor="#555" />
+
+    <TextView
+        android:id="@+id/txtCelularCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/numero_telefono"
+        android:textSize="14sp"
+        android:textColor="#555" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
